@@ -1,0 +1,27 @@
+<h2>新規投稿画面</h2>
+
+<%= form_tag("/posts/create") do %>
+    <div class="post-contents">
+        <div class="post-date">
+            <p>日付<input type="date"></p>
+        </div>
+        <div class="post-tytle">
+            <p>タイトル<input name="tytle"></p>
+        </div>
+        <div class="post-content">
+            <p>背景</p>
+            <textarea name="background"></textarea>
+        </div>
+        <div class="post-content">
+            <p>行動</p>
+            <textarea name="action"></textarea>
+        </div>
+        <div class="post-content">
+            <p>気付き・変化</p>
+            <textarea name="notice"></textarea>
+        </div>
+    </div>
+    <div class="posts-submit">
+        <input type="submit" value="作成">
+    <div>
+<% end %>
