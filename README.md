@@ -6,7 +6,7 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
-
+3.0.2
 * System dependencies
 
 * Configuration
@@ -18,7 +18,7 @@ Things you may want to cover:
 * How to run the test suite
 
 * Services (job queues, cache servers, search engines, etc.)
-
+Portfolio for Axis
 * Deployment instructions
 
 * ...
