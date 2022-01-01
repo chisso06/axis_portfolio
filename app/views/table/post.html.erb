@@ -1,0 +1,22 @@
+<h1>Post</h1>
+
+<% @posts.each do |post| %>
+    <div>
+        id: <%= post.id %>
+        <br>
+        start_date: <%= post.start_date %>
+        <br>
+        end_date: <%= post.end_date %>
+        <br>
+        tytle: <%= post.tytle %>
+        <br>
+        background: <%= post.background %>
+        <br>
+        do: <%= post.do %>
+        <br>
+        notice: <%= post.notice %>
+        <br>
+        user_id: <%= post.user_id %>
+        <hr>
+    </div>
+<% end %>

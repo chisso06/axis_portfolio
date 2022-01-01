@@ -2,6 +2,10 @@ Hello World
 
 hahaha
 
+<<<<<<< HEAD
 nanana
 
 create branch
+=======
+posts branch
+>>>>>>> posts

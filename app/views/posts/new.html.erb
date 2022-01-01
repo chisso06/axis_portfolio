@@ -1,0 +1,36 @@
+<h2>新規投稿画面</h2>
+
+<% if @post %>
+    <% @post.errors.full_messages.each do |message| %>
+        <div class="error-message">
+            <%= message %>
+        </div>
+    <% end %>
+<% end %>
+
+<%= form_tag("/posts/create") do %>
+    <div class="post-contents">
+        <div class="post-date">
+            <p>期間<input type="date" name="start_date"> - <input type="date" name="end_date"></p>
+        </div>
+        <div class="post-tytle">
+            <p>タイトル<input name="tytle"></p>
+        </div>
+        <div class="post-content">
+            <p>背景</p>
+            <textarea name="background"></textarea>
+        </div>
+        <div class="post-content">
+            <p>行動</p>
+            <textarea name="do"></textarea>
+        </div>
+        <div class="post-content">
+            <p>気付き・変化</p>
+            <textarea name="notice"></textarea>
+        </div>
+        <p>user_id<input name="user_id"></p>
+    </div>
+    <div class="post-submit">
+        <input type="submit" value="作成">
+    </div>
+<% end %>
