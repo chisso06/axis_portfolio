@@ -12,11 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2022_01_01_142550) do
 
-  create_table "columns_to_users", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "posts", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
