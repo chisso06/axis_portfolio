@@ -1,0 +1,41 @@
+<h2>新規登録</h2>
+
+<% if @user %>
+    <% @user.errors.full_messages.each do |message| %>
+        <div class="error-message">
+            <%= message %>
+        </div>
+    <% end %>
+<% end %>
+
+<%= form_tag("/users/create") do %>
+    <div class="regist-content">
+        <div class="regist-user">
+            ニックネーム<input name="name">
+        </div class="regist-user">
+
+        <div class="regist-user">
+            姓名<input name="real_name">
+        </div class="regist-user">
+
+        <div class="regist-user">
+            メールアドレス<input name="email">
+        </div class="regist-user">
+
+        <div class="regist-user">
+            <input name="grade">期生
+        </div class="regist-user">
+
+        <!--
+            <div class="regist-user">
+                写真※任意<input name="image" type="file" accept=".jpg, .jpeg">
+            </div class="regist-user">
+        -->
+
+        <div class="regist-user">
+            パスワード<input name="password">
+        </div class="regist-user">
+    </div>
+
+    <input type="submit" value="登録">
+<% end %>

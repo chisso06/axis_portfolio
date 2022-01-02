@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get '/users/new' => 'user#new'
+  post '/users/create' => 'user#create'
+
   get '/posts/new' => 'posts#new'
   post '/posts/create' => 'posts#create'
   get '/posts/:id/show' => 'posts#show'
@@ -9,4 +12,5 @@ Rails.application.routes.draw do
   get '/' => 'home#top'
 
   get '/table/post' => 'table#post'
+  get '/table/user' => 'table#user'
 end
