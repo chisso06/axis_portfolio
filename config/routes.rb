@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get '/' => 'home#top'
 
   get '/table/post' => 'table#post'
+  get '/users/:id' => 'users#show'
 end

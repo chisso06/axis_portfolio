@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    def show
-      @user = User.find_by(id: params[:id])
-    end
+  def posts
+    return Post.where(user_id: self.id)
+  end
 end
