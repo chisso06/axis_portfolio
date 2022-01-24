@@ -1,5 +1,6 @@
 class UserController < ApplicationController
     def new
+        @user = User.new
     end
 
     def create
@@ -19,9 +20,37 @@ class UserController < ApplicationController
         # end
 
         if @user.save
+            session[:user_id] = @user.id
+            flash[:notice] = "新規登録に成功しました"
             redirect_to("/")
         else
             render("user/new")
         end
+    end
+
+    def login_form
+        @email = ""
+    end
+
+    def login
+        @user = User.find_by(
+            email: params[:email],
+            password: params[:password]
+        )
+
+        if @user
+            session[:user_id] = @user.id
+            flash[:notice] = "ログインに成功しました"
+            redirect_to("/")
+        else
+            @email = params[:email]
+            render("user/login_form")
+        end
+    end
+
+    def logout
+        session[:user_id] = nil
+        flash[:notice] = "ログアウトしました"
+        redirect_to("/")
     end
 end

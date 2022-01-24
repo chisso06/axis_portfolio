@@ -1,4 +1,4 @@
-<h2>新規登録</h2>
+<h2>新規登録画面</h2>
 
 <% if @user %>
     <% @user.errors.full_messages.each do |message| %>
@@ -11,19 +11,19 @@
 <%= form_tag("/users/create") do %>
     <div class="regist-content">
         <div class="regist-user">
-            ニックネーム<input name="name">
+            ニックネーム<input name="name" value="<%= @user.name %>">
         </div class="regist-user">
 
         <div class="regist-user">
-            姓名<input name="real_name">
+            姓名<input name="real_name" value="<%= @user.real_name %>">
         </div class="regist-user">
 
         <div class="regist-user">
-            メールアドレス<input name="email">
+            メールアドレス<input name="email" value="<%= @user.email %>">
         </div class="regist-user">
 
         <div class="regist-user">
-            <input name="grade">期生
+            <input name="grade" value="<%= @user.grade %>">期生
         </div class="regist-user">
 
         <!--
@@ -33,7 +33,7 @@
         -->
 
         <div class="regist-user">
-            パスワード<input name="password">
+            パスワード<input name="password" type="password">
         </div class="regist-user">
     </div>
 
