@@ -5,13 +5,13 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(
-      start_date: params[:start_date],
-      end_date: params[:end_date],
+      year: params[:year],
+      month: params[:month],
       tytle: params[:tytle],
       background: params[:background],
       do: params[:do],
       notice: params[:notice],
-      user_id: params[:user_id]
+      user_id: session[:user_id]
     )
 
     if @post.save
@@ -32,8 +32,8 @@ class PostsController < ApplicationController
 
   def update
     post = Post.find_by(id: params[:id])
-    post.start_date = params[:start_date]
-    post.end_date = params[:end_date]
+    post.year = params[:year]
+    post.month = params[:month]
     post.tytle = params[:tytle]
     post.background = params[:background]
     post.do = params[:do]
@@ -45,7 +45,6 @@ class PostsController < ApplicationController
     else
       render("posts/#{post.id}/edit")
     end
-
   end
 
   def destroy
@@ -54,5 +53,4 @@ class PostsController < ApplicationController
     flash[:notice] = "投稿が削除されました"
     redirect_to("/")
   end
-
 end

@@ -6,6 +6,4 @@ class User < ApplicationRecord
         validates :grade
         validates :password
     end
-
-    validates :email, {uniqueness: true}
 end

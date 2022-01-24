@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get '/users/new' => 'user#new'
   post '/users/create' => 'user#create'
+  get '/users/setting' => 'user#setting'
+  post '/users/setting' => 'user#setting_update'
 
   get '/login' => 'user#login_form'
   post '/login' => 'user#login'

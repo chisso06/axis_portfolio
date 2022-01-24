@@ -4,9 +4,9 @@
     <div>
         id: <%= post.id %>
         <br>
-        start_date: <%= post.start_date %>
+        year: <%= post.year %>
         <br>
-        end_date: <%= post.end_date %>
+        month: <%= post.month %>
         <br>
         tytle: <%= post.tytle %>
         <br>
@@ -18,5 +18,7 @@
         <br>
         user_id: <%= post.user_id %>
         <hr>
+        <%= link_to("編集", "/posts/#{post.id}/edit") %>
+        <%= link_to("削除", "/posts/#{post.id}/destroy", {method:"post"}) %>
     </div>
 <% end %>

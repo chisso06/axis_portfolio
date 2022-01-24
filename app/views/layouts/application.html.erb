@@ -14,8 +14,9 @@
     <a href="/"><h1>AXIS PORTFOLIO</h1></a>
     <div class="header-banner">
       <% if session[:user_id] %>
+        <%= session[:user_id] %>
         <%= link_to("新規投稿", "/posts/new") %>
-        <%= link_to("ユーザ設定", "/users/setting/:user_id") %>
+        <%= link_to("ユーザ設定", "/users/setting") %>
         <%= link_to("ログアウト", "/logout", {method:"post"}) %>
       <% else %>
         <%= link_to("新規登録", "/users/new") %>
