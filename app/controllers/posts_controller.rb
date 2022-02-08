@@ -15,10 +15,10 @@ class PostsController < ApplicationController
     )
 
     if @post.save
-      flash[:notice] = "投稿が保存されました"
-      redirect_to("/")
+      flash[:notice] = '投稿が保存されました'
+      redirect_to('/')
     else
-      render("posts/new")
+      render('posts/new')
     end
   end
 
@@ -40,8 +40,8 @@ class PostsController < ApplicationController
     post.notice = params[:notice]
 
     if post.save
-      flash[:notice] = "編集が保存されました"
-      redirect_to("/")
+      flash[:notice] = '編集が保存されました'
+      redirect_to('/')
     else
       render("posts/#{post.id}/edit")
     end
@@ -50,7 +50,7 @@ class PostsController < ApplicationController
   def destroy
     post = Post.find_by(id: params[:id])
     post.destroy
-    flash[:notice] = "投稿が削除されました"
-    redirect_to("/")
+    flash[:notice] = '投稿が削除されました'
+    redirect_to('/')
   end
 end

@@ -7,6 +7,5 @@ class TableController < ApplicationController
     @users = User.all
   end
 
-  def like
-  end
+  def like; end
 end
