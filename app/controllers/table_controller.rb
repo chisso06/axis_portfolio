@@ -4,6 +4,7 @@ class TableController < ApplicationController
   end
 
   def user
+    @users = User.all
   end
 
   def like

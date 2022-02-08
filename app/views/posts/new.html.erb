@@ -1,36 +1,52 @@
 <h2>新規投稿画面</h2>
 
-<% if @post %>
-    <% @post.errors.full_messages.each do |message| %>
-        <div class="error-message">
-            <%= message %>
-        </div>
-    <% end %>
+<% @post.errors.full_messages.each do |message| %>
+    <div class="error-message">
+        <%= message %>
+    </div>
 <% end %>
 
 <%= form_tag("/posts/create") do %>
     <div class="post-contents">
         <div class="post-date">
-            <p>期間<input type="date" name="start_date"> - <input type="date" name="end_date"></p>
+            <select name="year" value="5">
+                <option value="1">2018</option>
+                <option value="2">2019</option>
+                <option value="3">2020</option>
+                <option value="4">2021</option>
+                <option value="5">2022</option>
+                <option value="6">2023</option>
+            </select>年
+            <select name="month" vlaue="1">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>月
         </div>
         <div class="post-tytle">
-            <p>タイトル<input name="tytle"></p>
+            <p>タイトル</p><input name="tytle" value="<%= @post.tytle %>" required>
         </div>
         <div class="post-content">
             <p>背景</p>
-            <textarea name="background"></textarea>
+            <textarea name="background"><%= @post.background %></textarea>
         </div>
         <div class="post-content">
             <p>行動</p>
-            <textarea name="do"></textarea>
+            <textarea name="do"><%= @post.do %></textarea>
         </div>
         <div class="post-content">
             <p>気付き・変化</p>
-            <textarea name="notice"></textarea>
+            <textarea name="notice"><%= @post.notice %></textarea>
         </div>
-        <p>user_id<input name="user_id"></p>
     </div>
-    <div class="post-submit">
-        <input type="submit" value="作成">
-    </div>
+    <input type="submit" value="作成">
 <% end %>

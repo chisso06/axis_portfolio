@@ -1,0 +1,23 @@
+<h2>ユーザ設定画面</h2>
+
+<%= form_tag("/users/setting") do %>
+    <div class="setting">
+        <div class="prof-content">
+            <p>ひとこと</p>
+            <textarea name="comment"><%= @user.comment %></textarea>
+        </div>
+        <div class="prof-content">
+            <p>ユーザ名</p>
+            <input name="name" value="<%= @user.name %>">
+        </div>
+        <div class="prof-content">
+            <p>メールアドレス</p>
+            <input name="email" value="<%= @user.email %>">
+        </div>
+        <div class="prof-content">
+            <p>パスワード</p>
+            <input name="password" value="<%= @user.password %>">
+        </div>
+    </div>
+    <input type="submit" value="更新">
+<% end %>

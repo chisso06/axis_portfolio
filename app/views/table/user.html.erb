@@ -1,0 +1,22 @@
+<h1>User Table</h1>
+
+<% @users.each do |user| %>
+    <div>
+        id: <%= user.id %>
+        <br>
+        name: <%= user.name %>
+        <br>
+        real_name: <%= user.real_name %>
+        <br>
+        email: <%= user.email %>
+        <br>
+        grade: <%= user.grade %>
+        <br>
+        image: <%= user.image %>
+        <br>
+        password: <%= user.password %>
+        <br>
+        comment: <%= user.comment %>
+        <hr>
+    </div>
+<% end %>

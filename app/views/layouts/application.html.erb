@@ -13,10 +13,22 @@
   <body>
     <a href="/"><h1>AXIS PORTFOLIO</h1></a>
     <div class="header-banner">
-      <a href="/users/logout">ログアウト</a>
-      <a href="/users/setting/:user_id">ユーザ設定</a>
-      <a href="/posts/new">新規投稿</a>
+      <% if session[:user_id] %>
+        <%= session[:user_id] %>
+        <%= link_to("新規投稿", "/posts/new") %>
+        <%= link_to("ユーザ設定", "/users/setting") %>
+        <%= link_to("ログアウト", "/logout", {method:"post"}) %>
+      <% else %>
+        <%= link_to("新規登録", "/users/new") %>
+        <%= link_to("ログイン", "/login") %>
+      <% end %>
     </div>
+
+    <% if flash[:notice]%>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
 
     <%= yield %>
   </body>
