@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get '/users/:id' => 'users#show'
   get '/table/user' => 'table#user'
   get 'users/index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  get "/" => "home#top"
 
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'users/:user_id/setting' => 'users#setting'
 end

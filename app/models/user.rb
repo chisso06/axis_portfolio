@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-<<<<<<< HEAD
   with_options presence: true do
       validates :name
       validates :real_name
@@ -11,6 +10,4 @@ class User < ApplicationRecord
   def posts
     return Post.where(user_id: self.id)
   end
-=======
->>>>>>> users_index
 end
