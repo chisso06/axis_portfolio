@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2022_01_24_080725) do
 
   create_table "posts", force: :cascade do |t|
@@ -32,6 +33,12 @@ ActiveRecord::Schema.define(version: 2022_01_24_080725) do
     t.string "password"
     t.string "image"
     t.string "comment"
+=======
+ActiveRecord::Schema.define(version: 2021_12_21_115348) do
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+>>>>>>> users_index
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
