@@ -2,7 +2,7 @@
   <div class="container">
     <div class="user">
       <% @user.posts.each do |post| %>
-        <%= link_to(post.content, "/users/#{post.id}")%>
+        <%= link_to(post.content, "/users/#{post.id}") %>
       <% end %>
     </div>
   </div>

@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  get 'users/show'
-
   get '/' => 'home#top'
 
   get '/users/new' => 'user#new'
   post '/users/create' => 'user#create'
   get '/users/setting' => 'user#setting'
   post '/users/setting' => 'user#setting_update'
+  get '/users/index' => 'users#index'
+  get '/users/:id' => 'users#show'
 
   get '/login' => 'user#login_form'
   post '/login' => 'user#login'
@@ -20,9 +20,7 @@ Rails.application.routes.draw do
   post '/posts/:id/destroy' => 'posts#destroy'
 
   get '/table/post' => 'table#post'
-  get '/users/:id' => 'users#show'
   get '/table/user' => 'table#user'
-  get 'users/index'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'users/:user_id/setting' => 'users#setting'

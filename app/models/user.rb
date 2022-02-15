@@ -8,6 +8,6 @@ class User < ApplicationRecord
   end
 
   def posts
-    Post.where(user_id: id)
+    return Post.where(user_id: self.id)
   end
 end
