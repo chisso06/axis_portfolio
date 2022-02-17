@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
   get '/' => 'home#top'
 
-  get '/users/new' => 'user#new'
-  post '/users/create' => 'user#create'
-  get '/users/setting' => 'user#setting'
-  post '/users/setting' => 'user#setting_update'
+  get '/users/new' => 'users#new'
+  post '/users/create' => 'users#create'
+  get '/users/setting' => 'users#setting'
+  post '/users/setting' => 'users#setting_update'
   get '/users/index' => 'users#index'
   get '/users/:id' => 'users#show'
 
-  get '/login' => 'user#login_form'
-  post '/login' => 'user#login'
-  post '/logout' => 'user#logout'
+  get '/login' => 'users#login_form'
+  post '/login' => 'users#login'
+  post '/logout' => 'users#logout'
 
   get '/posts/new' => 'posts#new'
   post '/posts/create' => 'posts#create'

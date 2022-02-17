@@ -22,6 +22,8 @@
         <%= link_to("新規登録", "/users/new") %>
         <%= link_to("ログイン", "/login") %>
       <% end %>
+      <%= link_to("投稿テーブル", "/table/post") %>
+      <%= link_to("ユーザーテーブル", "/table/user") %>
     </div>
 
     <% if flash[:notice]%>
@@ -29,11 +31,6 @@
         <%= flash[:notice] %>
       </div>
     <% end %>
-
-    <div class="header-banner">
-      <a href="/users/logout">ログアウト</a>
-      <a href="/users/setting/:user_id">ユーザ設定</a>
-    </div>
 
     <%= yield %>
   </body>
