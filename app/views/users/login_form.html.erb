@@ -1,13 +1,20 @@
-<h2>ログイン</h2>
-
-<%= form_tag("/login") do %>
-    <div class="login-contents">
-        <div class="login-user">
-            メールアドレス<input name="email" value="<%= @email %>">
-        </div>
-        <div class="login-user">
-            パスワード<input name="password" type="password">
-        </div>
+<div class="background-photo">
+    <div class="whole-block">
+        <%= form_tag("/login") do %>
+            <div class="block">
+                <h2>LOG IN</h2>
+                <div class="input">
+                    <p>email</p>
+                    <input name="email" value="<%= @email %>">
+                </div>
+                <div class="input">
+                    <p>password</p>
+                    <input name="password" type="password">
+                </div>
+            </div>
+            <div class="button">
+                <input type="submit" value="Start">
+            </div>
+        <% end %>
     </div>
-    <input type="submit" value="ログイン">
-<% end %>
+</div>    
