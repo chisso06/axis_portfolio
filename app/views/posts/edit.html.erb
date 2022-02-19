@@ -2,38 +2,42 @@
     <h1>編集</h1>
 </div>
 
-<% if @post %>
+<div class="content">
     <% @post.errors.full_messages.each do |message| %>
         <div class="error-message">
             <%= message %>
         </div>
     <% end %>
-<% end %>
 
-<%= form_tag("/posts/#{@post.id}/update") do %>
-    <div class="post-contents">
-        <div class="post-date">
-            <input name="year">年
-            <input name="month">月
+    <%= form_tag("/posts/create") do %>
+
+        <p>タイトル</p>
+        <input name="tytle" value="<%= @post.tytle %>">
+
+        <p>日付</p>
+        <div>
+            <div>
+                <input name="year" value="<%= @post.year %>">
+                <p>年</p>
+            </div>
+            <div>
+                <input name="month" value="<%= @post.month %>">
+                <p>月</p>
+            </div>
         </div>
-        <div class="post-tytle">
-            <p>タイトル<input name="tytle" value="<%= @post.tytle %>"></p>
-        </div>
-        <div class="post-content">
-            <p>背景</p>
-            <textarea name="background"><%= @post.background %></textarea>
-        </div>
-        <div class="post-content">
-            <p>行動</p>
-            <textarea name="do"><%= @post.do %></textarea>
-        </div>
-        <div class="post-content">
-            <p>気付き・変化</p>
-            <textarea name="notice"><%= @post.notice %></textarea>
-        </div>
-        <p>user_id：<%= @post.user_id %></p>
-    </div>
-    <div class="post-submit">
-        <input type="submit" value="更新">
-    </div>
-<% end %>
+        
+        <p>背景</p>
+        <textarea name="background"><%= @post.background %></textarea>
+
+        <p>意図</p>
+        <textarea name="aim"><%= @post.aim %></textarea>
+
+        <p>行動</p>
+        <textarea name="do"><%= @post.do %></textarea>
+
+        <p>気付き・変化</p>
+        <textarea name="notice"><%= @post.notice %></textarea>
+        
+        <input type="submit" value="Update">
+    <% end %>
+</div>

@@ -1,7 +1,17 @@
 <div class="top">
+
   <h1><%= @user.name %></h1>
-  <p><%= @user.grade %>期生</p>
-  <a href="posts/new">ポートフォリオを作成する</a>
+  <p><%= @user.real_name %></p>
+
+  <% if @user.grade = 0 %>
+    <p>運営</p>
+  <% else %>
+    <p><%= @user.grade %>期生</p>
+  <% end %>
+
+  <% if @user.id == session[:id] %>
+    <a href="/posts/new">ポートフォリオを作成する</a>
+  <% end %>
 </div>
 
 <% @user.posts.each do |post| %>
@@ -11,8 +21,10 @@
     <% end %>
     
     <div>
-      <%= link_to("編集", "/posts/#{post.id}/edit") %>
-      <%= link_to("削除", "/posts/#{post.id}/destroy", {method:"post"}) %>
+      <% if params[:id] = session[:id] %>
+        <%= link_to("編集", "/posts/#{post.id}/edit") %>
+        <%= link_to("削除", "/posts/#{post.id}/destroy", {method:"post"}) %>
+      <% end %>
     </div>
   </div>
 <% end %>

@@ -11,20 +11,22 @@
   </head>
 
   <body>
-    <% if session[:user_id] %>
-      <header>
-        <a href="/users/index"><h1>AXIS PORTFOLIO</h1></a>
-        <%= link_to("MyPage", "/users/#{session[:user_id]}") %>
-        <%= link_to("ユーザ一覧", "/users/index") %>
-        <%= link_to("Settings", "/users/setting") %>
-      </header>
-    <% end %>
+    <div>
+      <% if @current_user %>
+        <header>
+          <a href="/users/index"><h1>AXIS PORTFOLIO</h1></a>
+          <%= link_to("MyPage", "/users/#{session[:id]}") %>
+          <%= link_to("ユーザ一覧", "/users/index") %>
+          <%= link_to("Settings", "/users/setting") %>
+        </header>
+      <% end %>
 
-    <% if flash[:notice]%>
-      <div class="flash">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
+      <% if flash[:notice] %>
+        <div class="flash">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+    </div>
 
     <%= yield %>
 

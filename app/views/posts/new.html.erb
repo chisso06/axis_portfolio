@@ -10,27 +10,34 @@
     <% end %>
 
     <%= form_tag("/posts/create") do %>
-        <div class="post-contents">
-            <div class="post-date">
-                <input name="year">年
-                <input name="month">月
+
+        <p>タイトル</p>
+        <input name="tytle" value="<%= @post.tytle %>">
+
+        <p>日付</p>
+        <div>
+            <div>
+                <input name="year" value="<%= @post.year %>">
+                <p>年</p>
             </div>
-            <div class="post-tytle">
-                <p>タイトル</p><input name="tytle" value="<%= @post.tytle %>" required>
-            </div>
-            <div class="post-content">
-                <p>背景</p>
-                <textarea name="background"><%= @post.background %></textarea>
-            </div>
-            <div class="post-content">
-                <p>行動</p>
-                <textarea name="do"><%= @post.do %></textarea>
-            </div>
-            <div class="post-content">
-                <p>気付き・変化</p>
-                <textarea name="notice"><%= @post.notice %></textarea>
+            <div>
+                <input name="month" value="<%= @post.month %>">
+                <p>月</p>
             </div>
         </div>
+
+        <p>背景</p>
+        <textarea name="background"><%= @post.background %></textarea>
+
+        <p>意図</p>
+        <textarea name="aim"><%= @post.aim %></textarea>
+
+        <p>行動</p>
+        <textarea name="do"><%= @post.do %></textarea>
+
+        <p>気付き・変化</p>
+        <textarea name="notice"><%= @post.notice %></textarea>
+        
         <input type="submit" value="作成">
     <% end %>
 </div>

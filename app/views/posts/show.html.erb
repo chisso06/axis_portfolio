@@ -2,19 +2,28 @@
   <h1><%= @post.tytle %></h1>
   <%= link_to(@post.user.name, "/users/#{@post.user_id}") %>
   <p> | <%= @post.year %>/<%= @post.month %></p>
-  <%= link_to("編集", "/posts/#{@post.id}/edit") %>
-  <%= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"}) %>
+  <% if @post.user_id = session[:id] %>
+    <%= link_to("編集", "/posts/#{@post.id}/edit") %>
+    <%= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"}) %>
+  <% end %>
 </div>
 
 <div class="content">
-  <p>背景</p>
+  <h1>背景</h1>
   <%= @post.background %>
 </div>
+
 <div class="content">
-  <p>行動</p>
+  <h1>意図</h1>
+  <%= @post.aim %>
+</div>
+
+<div class="content">
+  <h1>行動</h1>
   <%= @post.do %>
 </div>
+
 <div class="content">
-  <p>変化/感じたこと</p>
+  <h1>変化/感じたこと</h1>
   <%= @post.notice %>
 </div>
