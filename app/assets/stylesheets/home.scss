@@ -1,3 +1,39 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.background-photo {
+    // padding: auto, 0;
+    display: flex;
+}
+
+.whole {
+    margin: auto;
+}
+
+.background-photo h1 {
+    font-size: 80px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.background-photo p {
+    font-size: 32px;
+    color: white;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+.up {
+    margin-right: 40px;
+}
+
+.button-set {
+    width: auto;
+    margin-top: 70px;
+    text-align: center;
+}
+
+.button {
+    width: 161px;
+}
