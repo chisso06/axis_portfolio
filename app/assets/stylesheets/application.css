@@ -437,8 +437,7 @@ th {
 
 /* サイト全体のフォント指定 */
 body {
-	/* font-family: "Hiragino UD Kaku Gothic Pro", "sans-selif"; */
-  font-family:"MS Pゴシック",sans-serif;
+	font-family: "Hiragino Kaku Gothic Pro", "sans-selif";
 }
 
 /* ============================================ */

@@ -2,33 +2,35 @@
     <h1>新規作成</h1>
 </div>
 
-<% @post.errors.full_messages.each do |message| %>
-    <div class="error-message">
-        <%= message %>
-    </div>
-<% end %>
+<div class="content">
+    <% @post.errors.full_messages.each do |message| %>
+        <div class="error-message">
+            <%= message %>
+        </div>
+    <% end %>
 
-<%= form_tag("/posts/create") do %>
-    <div class="post-contents">
-        <div class="post-date">
-            <input name="year">年
-            <input name="month">月
+    <%= form_tag("/posts/create") do %>
+        <div class="post-contents">
+            <div class="post-date">
+                <input name="year">年
+                <input name="month">月
+            </div>
+            <div class="post-tytle">
+                <p>タイトル</p><input name="tytle" value="<%= @post.tytle %>" required>
+            </div>
+            <div class="post-content">
+                <p>背景</p>
+                <textarea name="background"><%= @post.background %></textarea>
+            </div>
+            <div class="post-content">
+                <p>行動</p>
+                <textarea name="do"><%= @post.do %></textarea>
+            </div>
+            <div class="post-content">
+                <p>気付き・変化</p>
+                <textarea name="notice"><%= @post.notice %></textarea>
+            </div>
         </div>
-        <div class="post-tytle">
-            <p>タイトル</p><input name="tytle" value="<%= @post.tytle %>" required>
-        </div>
-        <div class="post-content">
-            <p>背景</p>
-            <textarea name="background"><%= @post.background %></textarea>
-        </div>
-        <div class="post-content">
-            <p>行動</p>
-            <textarea name="do"><%= @post.do %></textarea>
-        </div>
-        <div class="post-content">
-            <p>気付き・変化</p>
-            <textarea name="notice"><%= @post.notice %></textarea>
-        </div>
-    </div>
-    <input type="submit" value="作成">
-<% end %>
+        <input type="submit" value="作成">
+    <% end %>
+</div>
