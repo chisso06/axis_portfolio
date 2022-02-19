@@ -1,23 +1,29 @@
-<h2>ユーザ設定</h2>
+<div class="top">
+    <h1>設定</h1>
+</div>
 
-<%= form_tag("/users/setting") do %>
-    <div class="setting">
-        <div class="prof-content">
-            <p>ひとこと</p>
-            <textarea name="comment"><%= @user.comment %></textarea>
-        </div>
-        <div class="prof-content">
-            <p>ユーザ名</p>
-            <input name="name" value="<%= @user.name %>">
-        </div>
-        <div class="prof-content">
-            <p>メールアドレス</p>
-            <input name="email" value="<%= @user.email %>">
-        </div>
-        <div class="prof-content">
-            <p>パスワード</p>
-            <input name="password" value="<%= @user.password %>">
-        </div>
-    </div>
-    <input type="submit" value="更新">
-<% end %>
+<div class="content">
+    <h1>基本情報</h1>
+    <%= form_tag("/users/setting") do %>
+        
+        <p>ニックネーム</p>
+        <input name="name" value="<%= @user.name %>">
+
+        <p>姓名</p>
+        <input name="name" value="<%= @user.name %>">
+
+        <p>期(0-10)</p>
+        <input name="name" value="<%= @user.name %>">
+
+        <p>email</p>
+        <input name="email" value="<%= @user.email %>">
+
+        <p>password</p>
+        <input name="password" value="<%= @user.password %>">
+
+        <input type="submit" value="Update">
+    <% end %>
+
+    <h1>その他</h1>
+    <%= link_to("Log out", "/logout") %>
+</div>

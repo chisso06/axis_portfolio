@@ -9,46 +9,21 @@
 <% end %>
 
 <%= form_tag("/users/create") do %>
-    <div class="regist-content">
-        <div class="regist-user">
-            ニックネーム<input name="name" value="<%= @user.name %>">
-        </div class="regist-user">
 
-        <div class="regist-user">
-            姓名<input name="real_name" value="<%= @user.real_name %>">
-        </div class="regist-user">
+    <p>ニックネーム</p>
+    <input name="name" value="<%= @user.name %>">
 
-        <div class="regist-user">
-            メールアドレス<input name="email" value="<%= @user.email %>">
-        </div class="regist-user">
+    <p>姓名</p>
+    <input name="real_name" value="<%= @user.real_name %>">
 
-        <div class="regist-user">
-            <select name="grade">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select>
-            期生
-        </div class="regist-user">
+    <p>email</p>
+    <input name="email" value="<%= @user.email %>">
 
-        <!--
-            <div class="regist-user">
-                写真※任意<input name="image" type="file" accept=".jpg, .jpeg">
-            </div class="regist-user">
-        -->
+    <p>期(0-10)</p>
+    <input name="grade"><p>期生</p>
 
-        <div class="regist-user">
-            パスワード<input name="password" type="password">
-        </div class="regist-user">
-    </div>
-
+    <p>password</p>
+    <input name="password" type="password">
+    
     <input type="submit" value="登録">
 <% end %>
