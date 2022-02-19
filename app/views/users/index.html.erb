@@ -1,11 +1,27 @@
-<div class="main users-index">
-  <div class="container">
-    <% @users.each do |user| %>
-      <div class="users-index-item">
-        <div class="user-content">
-          <%= link_to(user.name, "/users/#{user.id}") %>
-        </div>
-      </div>
-    <% end %>
-  </div>
+<div class="top">
+  <h1>ユーザ一覧</h1>
+</div>
+<div class="content">
+  <h1>運営<h1>
+  <% @users.where(grade: 0).each do |user| %>
+    <%= link_to(user.name, "/users/#{user.id}") %>
+  <% end %>
+</div>
+<div class="content">
+  <h1>１期生<h1>
+  <% @users.where(grade: 1).each do |user| %>
+    <%= link_to(user.name, "/users/#{user.id}") %>
+  <% end %>
+</div>
+<div class="content">
+  <h1>２期生<h1>
+  <% @users.where(grade: 2).each do |user| %>
+    <%= link_to(user.name, "/users/#{user.id}") %>
+  <% end %>
+</div>
+<div class="content">
+  <h1>３期生<h1>
+  <% @users.where(grade: 3).each do |user| %>
+    <%= link_to(user.name, "/users/#{user.id}") %>
+  <% end %>
 </div>

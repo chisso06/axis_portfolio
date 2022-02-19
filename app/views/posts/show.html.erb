@@ -1,24 +1,20 @@
-<h2>投稿詳細</h2>
+<div class="top">
+  <h1><%= @post.tytle %></h1>
+  <%= link_to(@post.user.name, "/users/#{@post.user_id}") %>
+  <p> | <%= @post.year %>/<%= @post.month %></p>
+  <%= link_to("編集", "/posts/#{@post.id}/edit") %>
+  <%= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"}) %>
+</div>
 
-<div>
-    <%= @post.year %>年
-    <%= @post.month %>月
+<div class="content">
+  <p>背景</p>
+  <%= @post.background %>
 </div>
-<div>
-    タイトル：<%= @post.tytle %>
+<div class="content">
+  <p>行動</p>
+  <%= @post.do %>
 </div>
-<div>
-    背景：<%= @post.background %>
-</div>
-<div>
-    行動：<%= @post.do %>
-</div>
-<div>
-    学び・気付き：<%= @post.notice %>
-</div>
-<div>
-    <%= link_to("編集", "/posts/#{@post.id}/edit") %>
-</div>
-<div>
-    <%= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"}) %>
+<div class="content">
+  <p>変化/感じたこと</p>
+  <%= @post.notice %>
 </div>

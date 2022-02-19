@@ -5,4 +5,8 @@ class Post < ApplicationRecord
     validates :month
     validates :tytle
   end
+
+  def user
+    return User.find_by(id: self.user_id)
+  end
 end
