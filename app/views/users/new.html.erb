@@ -1,29 +1,37 @@
-<h2>新規登録</h2>
+<div class="background-photo">
+    <div class="whole big">
 
-<% if @user %>
-    <% @user.errors.full_messages.each do |message| %>
-        <div class="error-message">
-            <%= message %>
-        </div>
-    <% end %>
-<% end %>
+        <% if @user %>
+            <% @user.errors.full_messages.each do |message| %>
+                <div class="error-message">
+                    <%= message %>
+                </div>
+            <% end %>
+        <% end %>
 
-<%= form_tag("/users/create") do %>
+        <%= form_tag("/users/create") do %>
+            <div class="block max">
+                <h2>SIGN UP</h2>
+                <div class="input">
+                    <p>ニックネーム</p>
+                    <input name="name" value="<%= @user.name %>">
 
-    <p>ニックネーム</p>
-    <input name="name" value="<%= @user.name %>">
+                    <p>姓名</p>
+                    <input name="real_name" value="<%= @user.real_name %>">
 
-    <p>姓名</p>
-    <input name="real_name" value="<%= @user.real_name %>">
+                    <p>email</p>
+                    <input name="email" value="<%= @user.email %>">
 
-    <p>email</p>
-    <input name="email" value="<%= @user.email %>">
+                    <p>期(0-10)</p>
+                    <input name="grade">
 
-    <p>期(0-10)</p>
-    <input name="grade"><p>期生</p>
-
-    <p>password</p>
-    <input name="password" type="password">
-    
-    <input type="submit" value="登録">
-<% end %>
+                    <p>password</p>
+                    <input name="password" type="password">
+                </div>
+            </div>
+            <div class="button">
+                <input type="submit" value="登録">
+            </div>
+        <% end %>
+    </div>
+</div>

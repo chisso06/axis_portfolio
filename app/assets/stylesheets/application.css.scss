@@ -446,6 +446,11 @@ body {
 /* ============================================ */
 /* ============================================ */
 
+/* ============================================ */
+/* /* COMMON CODE */
+/* ============================================ */
+
+
 .button:hover{
     background-color: #a00;
     cursor: pointer;
@@ -456,26 +461,120 @@ body {
     background-color: black;
     display: inline-block;
     line-height: 46px;
+    width: 502px;
+    height: 50px;
+    text-align: center;
 }
 
 .background-photo {
-    background-image: url("https://cdn.discordapp.com/attachments/892337972433813524/944410456712425512/2022-02-18_10.21.54.png");
-    background-size: cover;
-    width: 100%;
-    height: 100vh;
+  background-image: url("https://cdn.discordapp.com/attachments/892337972433813524/944410456712425512/2022-02-18_10.21.54.png");
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  p {
+    color: black;
+    font-size: 40px;
+  }
 }
 
-.input p{
+.whole {
+  margin: auto;
+  .block {
+    background-color: rgba(255,255,255,0.4);
+    text-align: center;
+    margin: auto;
+    width: 502px;
+    padding: 40px 0px;
+  }  
+}
+
+.input {
+  p{
     font-size: 20px;
     color: black;
     margin-top: 25px;
     padding: 5px 5px;
-}
-
-.input input {
+  }
+  input {
     background-color: white;
     height: 36px;
     width: 50%;
     padding: 5px 5px;
     margin-top: 10px;
+  }
 }
+
+/* ============================================ */
+/* TOP */
+/* ============================================ */
+
+
+.whole {
+  h1 {
+  font-size: 80px;
+  color: white;
+  font-weight: bold;
+  }
+  p {
+    font-size: 32px;
+    color: white;
+    letter-spacing: 0.05em;
+  }
+}
+
+.button-set {
+  width: auto;
+  margin-top: 70px;
+  text-align: center;
+}
+
+.up{
+  margin-right: 40px;
+  width: 161px;
+}
+
+.in{
+  width: 161px;
+}
+
+
+/* ============================================ */
+/* LOG IN */
+/* ============================================ */
+
+
+
+.log{
+  height: 55%;
+}
+
+.background-photo h2 {
+  font-size: 40px;
+  margin: 15px;
+  margin-bottom: 15px;
+}
+
+.button start {
+  margin: auto;
+}
+
+.input p {
+  color: black;
+  font-size: 20px;
+}
+
+/* ============================================ */
+/* SIGN UP */
+/* ============================================ */
+
+.big {
+  height: 100%;
+}
+
+.max {
+  padding: 30px 0px !important;
+
+}
+
