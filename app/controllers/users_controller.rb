@@ -12,14 +12,7 @@ class UsersController < ApplicationController
       email: params[:email],
       grade: params[:grade],
       password: params[:password]
-      # image: "default.jpg"
     )
-
-    # if params[:image]
-    #     @user.image = "#{@user.id}.jpg"
-    #     image = params[:image]
-    #     File.binwrite("public/user_images/#{@user.image}", image.read)
-    # end
 
     if @user.save
       session[:id] = @user.id
@@ -36,10 +29,9 @@ class UsersController < ApplicationController
   def login
     @user = User.find_by(
       email: params[:email],
-      password: params[:password]
     )
 
-    if @user
+    if @user && @user.authenticate(params[:password])
       session[:id] = @user.id
       flash[:notice] = 'ログインに成功しました'
       redirect_to('/users/index')
@@ -74,7 +66,7 @@ class UsersController < ApplicationController
     @user.grade = params[:grade]
     @user.email = params[:email]
 
-    if @user.password == params[:password]
+    if @user.authenticate(params[:password])
       if @user.save
         flash[:notice] = '設定を更新しました'
         redirect_to('/users/setting')

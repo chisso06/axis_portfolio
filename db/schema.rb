@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_19_082302) do
+ActiveRecord::Schema.define(version: 2022_02_20_061025) do
 
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
@@ -30,11 +30,11 @@ ActiveRecord::Schema.define(version: 2022_02_19_082302) do
     t.string "real_name"
     t.string "email"
     t.integer "grade"
-    t.string "password"
     t.string "image"
     t.string "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
   end
 
 end
