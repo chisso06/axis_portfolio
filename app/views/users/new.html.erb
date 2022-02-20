@@ -1,5 +1,5 @@
 <div class="background-photo">
-    <div class="whole big">
+    <div class="whole new-whole">
 
         <% if @user %>
             <% @user.errors.full_messages.each do |message| %>
@@ -9,22 +9,26 @@
             <% end %>
         <% end %>
 
-        <%= form_tag("/users/create") do %>
+        <%= form_tag("/users/create", class: "form") do %>
             <div class="block max">
                 <h2>SIGN UP</h2>
                 <div class="input">
                     <p>ニックネーム</p>
                     <input name="name" value="<%= @user.name %>">
-
+                </div>
+                <div class="input">
                     <p>姓名</p>
                     <input name="real_name" value="<%= @user.real_name %>">
-
+                </div>
+                <div class="input">
                     <p>email</p>
                     <input name="email" value="<%= @user.email %>">
-
+                </div>
+                <div class="input">
                     <p>期(0-10)</p>
                     <input name="grade">
-
+                </div>
+                <div class="input">
                     <p>password</p>
                     <input name="password" type="password">
                 </div>

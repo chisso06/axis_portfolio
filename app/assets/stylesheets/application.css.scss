@@ -470,7 +470,7 @@ body {
   background-image: url("https://cdn.discordapp.com/attachments/892337972433813524/944410456712425512/2022-02-18_10.21.54.png");
   background-size: cover;
   width: 100%;
-  height: 100vh;
+  height: 800px;
   display: flex;
   text-align: center;
   p {
@@ -510,8 +510,7 @@ body {
 /* TOP */
 /* ============================================ */
 
-
-.whole {
+.top-whole {
   h1 {
   font-size: 80px;
   color: white;
@@ -522,33 +521,23 @@ body {
     color: white;
     letter-spacing: 0.05em;
   }
+  .button-set {
+    width: auto;
+    margin-top: 70px;
+    text-align: center;
+  }
+  .up{
+    margin-right: 40px;
+    width: 161px;
+  }
+  .in{
+    width: 161px;
+  }
 }
-
-.button-set {
-  width: auto;
-  margin-top: 70px;
-  text-align: center;
-}
-
-.up{
-  margin-right: 40px;
-  width: 161px;
-}
-
-.in{
-  width: 161px;
-}
-
 
 /* ============================================ */
 /* LOG IN */
 /* ============================================ */
-
-
-
-.log{
-  height: 55%;
-}
 
 .background-photo h2 {
   font-size: 40px;
@@ -556,25 +545,31 @@ body {
   margin-bottom: 15px;
 }
 
-.button start {
-  margin: auto;
-}
-
-.input p {
-  color: black;
-  font-size: 20px;
+.log-whole{
+  height: 55%;
+  .button-set {
+    width: auto;
+    margin-top: 70px;
+    text-align: center;
+  }
+  .up{
+    margin-right: 40px;
+    width: 161px;
+  }
+  .in{
+    width: 161px;
+  }
 }
 
 /* ============================================ */
 /* SIGN UP */
 /* ============================================ */
-
-.big {
-  height: 100%;
-}
-
-.max {
-  padding: 30px 0px !important;
-
+.new-whole {
+  .form {
+    height: 85%;
+  }
+  .max {
+    padding: 30px 0px !important;
+  }
 }
 
