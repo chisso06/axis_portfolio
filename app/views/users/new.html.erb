@@ -1,13 +1,5 @@
 <h2>新規登録</h2>
 
-<% if @user %>
-    <% @user.errors.full_messages.each do |message| %>
-        <div class="error-message">
-            <%= message %>
-        </div>
-    <% end %>
-<% end %>
-
 <%= form_tag("/users/create") do %>
 
     <p>ニックネーム</p>

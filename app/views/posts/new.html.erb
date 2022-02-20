@@ -3,11 +3,6 @@
 </div>
 
 <div class="content">
-    <% @post.errors.full_messages.each do |message| %>
-        <div class="error-message">
-            <%= message %>
-        </div>
-    <% end %>
 
     <%= form_tag("/posts/create") do %>
 
