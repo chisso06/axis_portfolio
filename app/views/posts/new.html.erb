@@ -1,38 +1,40 @@
-<div class="top">
-    <h1>新規作成</h1>
-</div>
+<div class="background-color">    
+    <div class="top">
+        <h1>新規作成</h1>
+    </div>
 
-<div class="content">
+    <div class="content">
 
-    <%= form_tag("/posts/create") do %>
+        <%= form_tag("/posts/create") do %>
 
-        <p>タイトル</p>
-        <input name="tytle" value="<%= @post.tytle %>">
+            <p>タイトル</p>
+            <input name="tytle" value="<%= @post.tytle %>">
 
-        <p>日付</p>
-        <div>
+            <p>日付</p>
             <div>
-                <input name="year" value="<%= @post.year %>">
-                <p>年</p>
+                <div>
+                    <input name="year" value="<%= @post.year %>">
+                    <p>年</p>
+                </div>
+                <div>
+                    <input name="month" value="<%= @post.month %>">
+                    <p>月</p>
+                </div>
             </div>
-            <div>
-                <input name="month" value="<%= @post.month %>">
-                <p>月</p>
-            </div>
-        </div>
 
-        <p>背景</p>
-        <textarea name="background"><%= @post.background %></textarea>
+            <p>背景</p>
+            <textarea name="background"><%= @post.background %></textarea>
 
-        <p>意図</p>
-        <textarea name="aim"><%= @post.aim %></textarea>
+            <p>意図</p>
+            <textarea name="aim"><%= @post.aim %></textarea>
 
-        <p>行動</p>
-        <textarea name="do"><%= @post.do %></textarea>
+            <p>行動</p>
+            <textarea name="do"><%= @post.do %></textarea>
 
-        <p>気付き・変化</p>
-        <textarea name="notice"><%= @post.notice %></textarea>
-        
-        <input type="submit" value="作成">
-    <% end %>
-</div>
+            <p>気付き・変化</p>
+            <textarea name="notice"><%= @post.notice %></textarea>
+            
+            <input type="submit" value="作成">
+        <% end %>
+    </div>
+</div>    

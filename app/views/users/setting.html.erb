@@ -1,33 +1,39 @@
-<div class="top">
-    <h1>設定</h1>
-</div>
+<div class="background-color setting-whole">
+    <div class="top">
+        <h1>設定</h1>
+    </div>
 
-<div class="content">
-    <h1>基本情報</h1>
-    <%= form_tag("/users/setting") do %>
-        <div class="input">  
-            <p>ニックネーム</p>
-            <input name="name" value="<%= @user.name %>">
-        </div>
-        <div class="input">  
-            <p>姓名</p>
-            <input name="real_name" value="<%= @user.real_name %>">
-        </div>
-        <div class="input">  
-            <p>期(0-10)</p>
-            <input name="grade" value="<%= @user.grade %>">
-        </div>
-        <div class="input">  
-            <p>email</p>
-            <input name="email" value="<%= @user.email %>">
-        </div>
-        <div class="input">  
-            <p>password</p>
-            <input name="password">
-        </div>
-        <input type="submit" value="Update">
-    <% end %>
+    <div class="content">
+        <h1>基本情報</h1>
+        <%= form_tag("/users/setting") do %>
+            <div class="input into">  
+                <p>ニックネーム</p>
+                <input name="name" value="<%= @user.name %>">
+            </div>
+            <div class="input into">  
+                <p>姓名</p>
+                <input name="real_name" value="<%= @user.real_name %>">
+            </div>
+            <div class="input into">  
+                <p>期(0-10)</p>
+                <input name="grade" value="<%= @user.grade %>">
+            </div>
+            <div class="input into">  
+                <p>email</p>
+                <input name="email" value="<%= @user.email %>">
+            </div>
+            <div class="input into">  
+                <p>password</p>
+                <input name="password">
+            </div>
+            <div class="button stud">
+                <input type="submit" value="Update">
+            </div>
+        <% end %>
 
-    <h1>その他</h1>
-    <%= link_to("Log out", "/logout", {method: "post"}) %>
+        <h1>その他</h1>
+        <div class="button stud">
+            <%= link_to("Log out", "/logout", {method: "post"}) %>
+        </div>
+    </div>
 </div>
