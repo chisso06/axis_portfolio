@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :non_login_user
-  before_action :correct_user, only: [:edit, :update, :destroy]
+  # before_action :non_login_user
+  # before_action :correct_user, only: [:edit, :update, :destroy]
 
   def new
     @post = Post.new
@@ -56,20 +56,20 @@ class PostsController < ApplicationController
     post = Post.find_by(id: params[:id])
     post.destroy
     flash[:notice] = '投稿が削除されました'
-    render('home/top')
+    redirect_to("/users/#{session[:id]}")
   end
 
   # before_actions
 
   def non_login_user
-    if @current_user == nil
+    if @current_user = nil
       flash[:notice] = 'ログインしてください'
       redirect_to('/')
     end
   end
 
   def correct_user
-    unless session[:id] == params[:id]
+    unless session[:id] = params[:id]
       flash[:notice] = '権限がありません'
       redirect_to('/users/index')
     end

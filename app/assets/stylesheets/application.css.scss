@@ -447,6 +447,54 @@ body {
 /* ============================================ */
 
 /* ============================================ */
+/* header*/
+/* ============================================ */
+
+header {
+  width: 100%;
+  height: 80px;
+
+  .header-mini {
+    width: 85%;
+    margin: 0 auto;
+  }
+}
+
+header h1{
+  font-size: 28px;
+  line-height: 80px;
+  float: left;
+}
+
+.three-link {
+  float: right;
+  display: flex;
+  float: right;
+
+  .redhover {
+    a {
+      font-size: 15px;
+      margin-left: 40px;
+      line-height: 80px;
+    }
+    &:hover {
+      color: #a00;
+    }
+  }
+}
+/* ============================================ */
+/* /* footer */
+/* ============================================ */
+
+footer {
+  width: 100%;
+  height: 50px;
+}
+
+
+
+
+/* ============================================ */
 /* /* COMMON CODE */
 /* ============================================ */
 
@@ -663,9 +711,169 @@ body {
       }
     }  
   }
+  .content-box {
+    padding: 10px 40px;
+    width: 65%;
+    height: 60px;
+    background-color: #F5F5F5;
+    border-radius: 4px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    vertical-align: middle;
+      .content-title {
+        font-size: 20px;
+        float: left;
+      }
+      .edit-link {
+        display: flex;
+        justify-content: flex-end;
+        color: #b8b8b8;
+        font-size: 12px;
+        float: right;
+        .edit-button {
+          margin-right: 10px;
+          a {
+            border-bottom: 1px solid #b8b8b8;
+            &:hover {
+              color: #444444
+            }
+          }
+        }
+        .destroy-button {
+          a {
+            border-bottom: 1px solid #b8b8b8;
+            &:hover {
+              color: #444444
+            }
+          }
+        }
+      }
+  }
 }
+
+
 
 /* ============================================ */
 /* Posts new */
 /* ============================================ */
+
+.postnew-top {
+  .content{
+  }
+  
+}
+
+.title-input {
+  width: 40%;
+  background-color: white;
+  height: 36px;
+  padding: 5px 5px;
+  margin-top: 10px;
+}
+
+
+
+.postnew-button {
+  margin: 50px 0px;
+}
+
+.postnew-input {
+  background-color: white;
+  width: 40%;
+  margin-top: 10px;
+  display: flex;
+  margin: auto;
+  text-align: center;
+
+}
+
+.mini-input {
+  height: 36px;
+  width: 1 flex;
+  padding: 5px 5px;
+  margin-left: 10px;
+}
+
+.nextto-input {
+  display: flex;
+  p {
+    margin: 0px 10px;
+    height: 36px;
+    font-size: 20px;
+  }
+}
+
+textarea {
+  background-color: white;
+  margin-top: 10px;
+  width: 80%;
+  height: 160px;
+  padding: 10px 10px;
+}
+
+.try {
+  margin: 25px 0px 10px 0px;
+  font-size: 20px;
+}
+
+
+/* ============================================ */
+/* Posts show */
+/* ============================================ */
+
+.detail-top {
+  .nameyear {
+    margin-top: 20px;
+    margin: 0 auto;
+    display: flex;
+    .nameyear-box {
+      margin: 0 auto;
+      display: flex;
+      p {
+        text-align: center;
+      }
+      a {
+        padding-top: 20px;
+        text-align: center;
+      }
+    }
+  }
+  .two-button {
+    width: 308px;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+  }
+  .switch {
+    width: 144px;
+    padding: 10px 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    text-align: center;
+    &:hover {
+      background-color: #a00;
+      cursor: pointer;
+      color: white;
+      border: 1px solid #a00;
+    }
+  }
+  .switch-left {
+    margin-right: 20px;
+  }
+}
+
+.main {
+  padding: 50px 100px;
+  width: 100%;
+}
+
+/* ============================================ */
+/* Posts edit */
+/* ============================================ */
+
+.input {
+  .title-input {
+    width: 40%;
+  }
+}
 

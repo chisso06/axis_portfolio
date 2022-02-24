@@ -18,17 +18,24 @@
   </div>
 
   <% @user.posts.each do |post| %>
-    <div>
-      <%= link_to("/posts/#{post.id}/show") do %>
-        <%= post.year %>/<%= post.month %>　<%= post.tytle %>
-      <% end %>
+    <div class="content-box">
       
-      <div>
-        <% if params[:id] = session[:id] %>
-          <%= link_to("編集", "/posts/#{post.id}/edit") %>
-          <%= link_to("削除", "/posts/#{post.id}/destroy", {method:"post"}) %>
-        <% end %>
-      </div>
-    </div>
+        <div class="content-title">
+          <%= link_to("/posts/#{post.id}/show") do %>
+            <%= post.year %>/<%= post.month %>/<%= post.tytle %>
+          <% end %>
+        </div>
+        <div class="edit-link">
+          <% if params[:id] = session[:id] %>
+          <div class="edit-button">
+            <%= link_to("編集", "/posts/#{post.id}/edit") %>
+          </div>
+          <div class="destroy-button">
+            <%= link_to("削除", "/posts/#{post.id}/destroy", {method:"post"}) %>
+          </div>
+          <% end %>
+        </div>
+      
+    </div>  
   <% end %>
 </div>

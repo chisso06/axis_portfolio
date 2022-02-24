@@ -1,40 +1,53 @@
 <div class="background-color">    
-    <div class="top">
+    <div class="top postnew-top">
         <h1>新規作成</h1>
     </div>
 
     <div class="content">
 
         <%= form_tag("/posts/create") do %>
-
-            <p>タイトル</p>
-            <input name="tytle" value="<%= @post.tytle %>">
-
-            <p>日付</p>
             <div>
-                <div>
-                    <input name="year" value="<%= @post.year %>">
-                    <p>年</p>
-                </div>
-                <div>
-                    <input name="month" value="<%= @post.month %>">
-                    <p>月</p>
+                <p>タイトル</p>
+                <input name="tytle" class="title-input" value="<%= @post.tytle %>">
+            </div>
+
+            <div>
+                <p class="try">日付</p>
+                <div class="postnew-input">
+                    <div class="nextto-input">
+                        <input name="year" class="mini-input" value="<%= @post.year %>">
+                        <p>年</p>
+                    </div>
+                    <div class="nextto-input">
+                        <input name="month" class="mini-input" value="<%= @post.month %>">
+                        <p>月</p>
+                    </div>
                 </div>
             </div>
 
-            <p>背景</p>
-            <textarea name="background"><%= @post.background %></textarea>
+            <div class="input">
+                <p>背景</p>
+                <textarea name="background" rows="7" cols="85" style="text-align:left;" placeholder="put message here"/><%= @post.background %></textarea>
+            </div>
 
-            <p>意図</p>
-            <textarea name="aim"><%= @post.aim %></textarea>
+            <div class="input">
+                <p>意図</p>
+                <textarea name="aim" rows="7" cols="85" style="text-align:left;" placeholder="put message here"/><%= @post.aim %></textarea>
+            </div>
 
-            <p>行動</p>
-            <textarea name="do"><%= @post.do %></textarea>
+            <div class="input">
+                <p>行動</p>
+                <textarea name="do" rows="7" cols="85" style="text-align:left;" placeholder="put message here"/><%= @post.do %></textarea>
+            </div>
 
+            <div class="input">
             <p>気付き・変化</p>
-            <textarea name="notice"><%= @post.notice %></textarea>
-            
-            <input type="submit" value="作成">
+            <textarea name="notice" rows="7" cols="85" style="text-align:left;" placeholder="put message here"/><%= @post.notice %></textarea>
+            </div>
+
+            <div class="button postnew-button">
+                <input type="submit" value="作成">
+            </div>
         <% end %>
     </div>
 </div>    
