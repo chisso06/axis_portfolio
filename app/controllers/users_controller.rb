@@ -20,6 +20,7 @@ class UsersController < ApplicationController
       flash[:notice] = '新規登録に成功しました'
       redirect_to('/users/index')
     else
+      flash[:dangerous] = '入力された内容に誤りがあります。'
       render('users/new')
     end
   end
@@ -37,7 +38,7 @@ class UsersController < ApplicationController
       flash[:notice] = 'ログインに成功しました'
       redirect_to('/users/index')
     else
-      flash[:notice] = 'emailまたはpasswordが違います'
+      flash[:dangerous] = 'emailまたはpasswordが違います'
       render('users/login_form')
     end
   end
@@ -72,10 +73,11 @@ class UsersController < ApplicationController
         flash[:notice] = '設定を更新しました'
         redirect_to('/users/setting')
       else
+        flash[:dangerous] = '入力された内容に誤りがあります'
         render('users/setting')
       end
     else
-      flash[:notice] = "正しいパスワードを入力してください"
+      flash[:dangerous] = "正しいパスワードを入力してください"
       render('users/setting')
     end
   end

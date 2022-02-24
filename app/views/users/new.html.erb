@@ -1,14 +1,6 @@
 <div class="background-photo">
     <div class="whole new-whole">
 
-        <% if @user %>
-            <% @user.errors.full_messages.each do |message| %>
-                <div class="error-message">
-                    <%= message %>
-                </div>
-            <% end %>
-        <% end %>
-
         <%= form_tag("/users/create", class: "form") do %>
             <div class="block max">
                 <h2>SIGN UP</h2>
@@ -16,22 +8,42 @@
                     <p>ニックネーム</p>
                     <input name="name" value="<%= @user.name %>">
                 </div>
+                <% if @post.errors.include?(:name) %>
+                    <p class="error-message">入力必須項目です</p>
+                <% end %>
+
                 <div class="input">
                     <p>姓名</p>
                     <input name="real_name" value="<%= @user.real_name %>">
                 </div>
+                <% if @post.errors.include?(:real_name) %>
+                    <p class="error-message">入力必須項目です</p>
+                <% end %>
+
                 <div class="input">
                     <p>email</p>
                     <input name="email" value="<%= @user.email %>">
                 </div>
+                <% if @post.errors.include?(:) %>
+                    <p class="error-message">有効なメールアドレスを入力してください</p>
+                <% end %>
+
                 <div class="input">
                     <p>期(0-10)</p>
                     <input name="grade">
                 </div>
+                <% if @post.errors.include?(:grade) %>
+                    <p class="error-message">0〜10の半角数字を入力してください</p>
+                <% end %>
+
                 <div class="input">
                     <p>password</p>
                     <input name="password" type="password">
                 </div>
+                <% if @post.errors.include?(:password) %>
+                    <p class="error-message">6文字以上のパスワードを入力してください</p>
+                <% end %>
+
             </div>
             <div class="button">
                 <input type="submit" value="登録">

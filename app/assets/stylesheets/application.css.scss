@@ -545,6 +545,27 @@ body {
   }
 }
 
+.error-message {
+  color: #a00;
+  font-size: 12px;
+}
+
+.flash {
+  width: 100%;
+  height: 30px;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+}
+
+.notice {
+  background-color: #00ACC1;
+}
+
+.dangerous {
+  background-color: #a00;
+}
+
 /* ============================================ */
 /* TOP */
 /* ============================================ */

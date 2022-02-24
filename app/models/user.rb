@@ -13,7 +13,7 @@ class User < ApplicationRecord
 
   validates :grade, numericality: { in: 0..10 }, format: { with: /\A[0-9]+\z/ }
 
-  validates :password, presence: true
+  validates :password, presence: true, length: { minimum: 6 }
 
   def posts
     return Post.where(user_id: self.id)

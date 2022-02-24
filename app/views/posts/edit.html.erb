@@ -8,6 +8,10 @@
 
         <p>タイトル</p>
         <input name="tytle" value="<%= @post.tytle %>">
+        <% if @post.errors.include?(:tytle) %>
+            <p class="error-message">入力必須項目です</p>
+        <% end %>
+
 
         <p>日付</p>
         <div>
@@ -15,10 +19,17 @@
                 <input name="year" value="<%= @post.year %>">
                 <p>年</p>
             </div>
+            <% if @post.errors.include?(:year) %>
+                <p class="error-message">入力必須項目です</p>
+            <% end %>
+
             <div>
                 <input name="month" value="<%= @post.month %>">
                 <p>月</p>
             </div>
+            <% if @post.errors.include?(:month) %>
+                <p class="error-message">入力必須項目です</p>
+            <% end %>
         </div>
         
         <p>背景</p>

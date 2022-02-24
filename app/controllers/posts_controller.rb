@@ -22,6 +22,7 @@ class PostsController < ApplicationController
       flash[:notice] = '投稿が保存されました'
       redirect_to("/users/#{session[:id]}")
     else
+      flash[:dangerous] = '入力された内容に誤りがあります'
       render('posts/new')
     end
   end
@@ -46,9 +47,10 @@ class PostsController < ApplicationController
 
     if @post.save
       flash[:notice] = '編集が保存されました'
-      redirect_to("/posts/#{@post.id}/edit")
+      redirect_to("/users/#{session[:id]}")
     else
-      render("posts/#{@post.id}/edit")
+      flash[:dangerous] = '入力された内容に誤りがあります'
+      render('posts/edit')
     end
   end
 
@@ -70,7 +72,7 @@ class PostsController < ApplicationController
 
   def correct_user
     unless session[:id] == Post.find_by(id: params[:id]).user_id
-      flash[:notice] = '権限がありません'
+      flash[:dangerous] = '権限がありません'
       redirect_to('/users/index')
     end
   end

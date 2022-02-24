@@ -20,13 +20,18 @@
           <%= link_to("Settings", "/users/setting") %>
         </header>
       <% end %>
-
-      <% if flash[:notice] %>
-        <div class="flash">
-          <%= flash[:notice] %>
-        </div>
-      <% end %>
     </div>
+
+    <% if flash[:dangerous] %>
+      <div class="flash dangerous">
+        <%= flash[:dangerous] %>
+      </div>
+    <% elsif flash[:notice] %>
+      <div class="flash notice">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    
 
     <%= yield %>
 
