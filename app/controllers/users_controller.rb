@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :non_login_user, only: [:logout, :show, :index, :setting, :setting_update]
-  before_action :login_user, only: [:new, :create, :login_form, :login]
+  before_action :login_user, only: [:login_form, :login]
+  
   def new
     @user = User.new
   end
@@ -67,7 +68,7 @@ class UsersController < ApplicationController
     @user.email = params[:email]
 
     if @user.authenticate(params[:password])
-      if @user.save
+      if @user.update
         flash[:notice] = '設定を更新しました'
         redirect_to('/users/setting')
       else
@@ -81,13 +82,13 @@ class UsersController < ApplicationController
 end
 
 def login_user
-  if @current_user
+  unless session[:id].nil?
     redirect_to('/users/index')
   end
 end
 
 def non_login_user
-  if @current_user == nil
+  if session[:id].nil?
     flash[:notice] = 'ログインしてください'
     redirect_to('/')
   end

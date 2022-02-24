@@ -44,7 +44,7 @@ class PostsController < ApplicationController
     post.do = params[:do]
     post.notice = params[:notice]
 
-    if post.save
+    if post.update
       flash[:notice] = '編集が保存されました'
       redirect_to("/posts/#{post.id}/edit")
     else
@@ -56,20 +56,20 @@ class PostsController < ApplicationController
     post = Post.find_by(id: params[:id])
     post.destroy
     flash[:notice] = '投稿が削除されました'
-    render('home/top')
+    redirect_to("/users/#{session[:id]}")
   end
 
   # before_actions
 
   def non_login_user
-    if @current_user == nil
+    if session[:id].nil?
       flash[:notice] = 'ログインしてください'
       redirect_to('/')
     end
   end
 
   def correct_user
-    unless session[:id] == params[:id]
+    unless session[:id] == Post.find_by(params[:id]).user_id
       flash[:notice] = '権限がありません'
       redirect_to('/users/index')
     end
