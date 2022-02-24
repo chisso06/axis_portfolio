@@ -35,20 +35,20 @@ class PostsController < ApplicationController
   end
 
   def update
-    post = Post.find_by(id: params[:id])
-    post.year = params[:year]
-    post.month = params[:month]
-    post.tytle = params[:tytle]
-    post.background = params[:background]
-    post.aim = params[:aim]
-    post.do = params[:do]
-    post.notice = params[:notice]
+    @post = Post.find_by(id: params[:id])
+    @post.year = params[:year]
+    @post.month = params[:month]
+    @post.tytle = params[:tytle]
+    @post.background = params[:background]
+    @post.aim = params[:aim]
+    @post.do = params[:do]
+    @post.notice = params[:notice]
 
-    if post.update
+    if @post.save
       flash[:notice] = '編集が保存されました'
-      redirect_to("/posts/#{post.id}/edit")
+      redirect_to("/posts/#{@post.id}/edit")
     else
-      render("posts/#{post.id}/edit")
+      render("posts/#{@post.id}/edit")
     end
   end
 
@@ -69,7 +69,7 @@ class PostsController < ApplicationController
   end
 
   def correct_user
-    unless session[:id] == Post.find_by(params[:id]).user_id
+    unless session[:id] == Post.find_by(id: params[:id]).user_id
       flash[:notice] = '権限がありません'
       redirect_to('/users/index')
     end

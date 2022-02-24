@@ -68,7 +68,7 @@ class UsersController < ApplicationController
     @user.email = params[:email]
 
     if @user.authenticate(params[:password])
-      if @user.update
+      if @user.save
         flash[:notice] = '設定を更新しました'
         redirect_to('/users/setting')
       else

@@ -4,7 +4,7 @@
 
 <div class="content">
 
-    <%= form_tag("/posts/create") do %>
+    <%= form_tag("/posts/#{@post.id}/update") do %>
 
         <p>タイトル</p>
         <input name="tytle" value="<%= @post.tytle %>">

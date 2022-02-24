@@ -12,7 +12,7 @@
 
   <body>
     <div>
-      <% unless @current_user.nil? %>
+      <% unless session[:id].nil? %>
         <header>
           <a href="/users/index"><h1>AXIS PORTFOLIO</h1></a>
           <%= link_to("MyPage", "/users/#{session[:id]}") %>
@@ -30,7 +30,7 @@
 
     <%= yield %>
 
-    <% unless @current_user.nil? %>
+    <% unless session[:id].nil? %>
       <footer>
         <p>©︎</p>
         <p>2022 関西AXIS</p>
