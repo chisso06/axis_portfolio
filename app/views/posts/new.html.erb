@@ -1,4 +1,4 @@
-<div class="background-color posts-new-whole">
+<div class="background-color posts-new-edit-whole">
     <div class="top postnew-top">
         <h1>新規作成</h1>
     </div>
@@ -6,34 +6,34 @@
     <div class="content">
 
         <%= form_tag("/posts/create") do %>
-            <div>
+            <div class="input">
                 <p>タイトル</p>
-                <input name="tytle" value="<%= @post.tytle %>" class="title-input <%= "error-input" if @post.errors.include?(:tytle) %>">
+                <input name="tytle" value="<%= @post.tytle %>" class="<%= "error-input" if @post.errors.include?(:tytle) %>">
             </div>
             <% if @post.errors.include?(:tytle) %>
                 <p class="error-message">入力必須項目です</p>
             <% end %>
 
-            <div>
-                <p class="try">日付</p>
+            <div class="input">
+                <p>日付</p>
                 <div class="postnew-input">
                     <div class="nextto-input">
                         <input name="year" value="<%= @post.year %>" class="mini-input <%= "error-input" if @post.errors.include?(:year) %>">
                         <p>年</p>
                     </div>
+                    <div class="nextto-input">
+                        <input name="month" value="<%= @post.month %>" class="mini-input <%= "error-input" if @post.errors.include?(:month) %>">
+                        <p>月</p>
+                    </div>
                 </div>
-                <% if @post.errors.include?(:year) %>
-                    <p class="error-message">入力必須項目です</p>
-                <% end %>
-
-                <div>
-                    <input name="month" value="<%= @post.month %>" class="mini-input <%= "error-input" if @post.errors.include?(:month) %>">
-                    <p>月</p>
-                </div>
-                <% if @post.errors.include?(:month) %>
-                    <p class="error-message">入力必須項目です</p>
-                <% end %>
             </div>
+            <% if @post.errors.include?(:year) %>
+                <p class="error-message">入力必須項目です</p>
+            <% end %>
+
+            <% if @post.errors.include?(:month) %>
+                <p class="error-message">入力必須項目です</p>
+            <% end %>
 
             <div class="input">
                 <p>背景</p>
@@ -55,7 +55,7 @@
                 <textarea name="notice" name="notice" rows="7" cols="85" style="text-align:left;"><%= @post.notice %></textarea>
             </div>
 
-            <div class="button postnew-button">
+            <div class="button big-button">
                 <input type="submit" value="作成">
             </div>
         <% end %>

@@ -482,7 +482,7 @@ body {
 }
 
 .top {
-  padding: 100px 0px 50px 0px;
+  padding: 180px 0px 50px 0px;
   width: 100%;
   margin: 0 auto;
   h1 {
@@ -521,7 +521,7 @@ body {
   input {
     background-color: white;
     height: 36px;
-    width: 50%;
+    width: 40%;
     padding: 5px 5px;
     margin-top: 10px;
   }
@@ -539,6 +539,10 @@ body {
     background-color: #a00;
     cursor: pointer;
   }
+}
+
+.big-button {
+  margin: 50px 0px;
 }
 
 /* ===== TOP ===== */
@@ -605,9 +609,6 @@ body {
 /* ===== Users setting ===== */
 
 .setting-whole {
-  .content input {
-    width: 40%;
-  }
   .into {
     text-align: center;
     p {
@@ -617,11 +618,17 @@ body {
       margin-top: 10px;
     }
   }
-  .stud {
+}
+
+/* ===== Users index ===== */
+.index-whole {
+  .innercontent {
+    width: 90%;
     margin: 50px 0px;
-    width: 40%;
+    padding-top: 10px;
   }
 }
+
 
 /* ===== Users show ===== */
 
@@ -648,14 +655,17 @@ body {
     }  
   }
   .content-box {
-    padding: 10px 40px;
+    padding: 0px 40px;
     width: 65%;
     height: 60px;
     background-color: #F5F5F5;
     border-radius: 4px;
     margin: 0 auto;
     margin-bottom: 30px;
-    vertical-align: middle;
+    // vertical-align: middle;
+    .topic-date {
+      line-height: 60px;
+    }
     .content-title {
       font-size: 20px;
       float: left;
@@ -666,40 +676,25 @@ body {
       color: #b8b8b8;
       font-size: 12px;
       float: right;
+      .gray-button {
+        line-height: 60px;
+        border-bottom: 1px solid #b8b8b8;
+        &:hover {
+          color: #444444
+        }
+      }
       .edit-button {
-        margin-right: 10px;
-        a {
-          border-bottom: 1px solid #b8b8b8;
-          &:hover {
-            color: #444444
-          }
+        a{
+          margin-right: 10px;
         }
-      }
-      .destroy-button {
-        a {
-          border-bottom: 1px solid #b8b8b8;
-          &:hover {
-            color: #444444
-          }
-        }
-      }
+      }      
     }
   }
 }
 
-/* ===== posts new ===== */
+/* ===== posts new edit ===== */
 
-.posts-new-whole {
-  .title-input {
-    width: 40%;
-    background-color: white;
-    height: 36px;
-    padding: 5px 5px;
-    margin-top: 10px;
-  }
-  .postnew-button {
-    margin: 50px 0px;
-  }
+.posts-new-edit-whole {
   .postnew-input {
     background-color: white;
     width: 40%;
@@ -712,14 +707,15 @@ body {
     height: 36px;
     width: 1 flex;
     padding: 5px 5px;
+    margin: auto 0;
     margin-left: 10px;
   }
   .nextto-input {
     display: flex;
     p {
       margin: 0px 10px;
-      height: 36px;
       font-size: 20px;
+      line-height: 36px;
     }
   }
   textarea {
@@ -728,10 +724,6 @@ body {
     width: 80%;
     height: 160px;
     padding: 10px 10px;
-  }
-  .try {
-    margin: 25px 0px 10px 0px;
-    font-size: 20px;
   }
 }
 
@@ -784,29 +776,24 @@ body {
   }
 }
 
-/* ===== posts edit ===== */
-
-.posts-edit-whole {
-  .input {
-    .title-input {
-      width: 40%;
-    }
-  }
-}
-
 /* ===== header ===== */
 
 header {
+  background-color: white;
   width: 100%;
-  height: 80px;
+  height: 70px;
+  box-shadow: 0px 2px 5px #8c8c8c;
+  position: absolute;
+  z-index: 5;
   .header-mini {
     width: 85%;
     margin: 0 auto;
   }
   h1 {
     font-size: 28px;
-    line-height: 80px;
+    line-height: 70px;
     float: left;
+    font-weight: bold;
   }
   .three-link {
     float: right;
@@ -816,7 +803,7 @@ header {
       a {
         font-size: 15px;
         margin-left: 40px;
-        line-height: 80px;
+        line-height: 70px;
       }
       &:hover {
         color: #a00;
