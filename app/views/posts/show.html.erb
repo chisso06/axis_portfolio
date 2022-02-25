@@ -1,37 +1,58 @@
-<div class="top">
-  <h1><%= @post.tytle %></h1>
-  <%= link_to(@post.user.name, "/users/#{@post.user_id}") %>
-  <p> | <%= @post.year %>/<%= @post.month %></p>
-  <% if @post.user_id = session[:id] %>
-    <%= link_to("編集", "/posts/#{@post.id}/edit") %>
-    <%= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"}) %>
+<div class="background-color posts-show-whole">
+  <div class="top detail-top">
+    <h1><%= @post.tytle %></h1>
+
+    <div class="nameyear">
+      <div class="nameyear-box">
+        <%= link_to(@post.user.name, "/users/#{@post.user_id}") %>
+        <p> | <%= @post.year %>/<%= @post.month %></p>
+      </div>
+    </div>
+    <div class="two-button">
+      <% if @post.user_id = session[:id] %>
+        <div class="switch switch-left">
+          <%= link_to("編集", "/posts/#{@post.id}/edit") %>
+        </div>
+        <div class="switch">
+          <%= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"}) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <% unless @post.background.empty? %>
+    <div class="content">
+      <h1>背景</h1>
+      <div class="main">
+        <%= @post.background %>
+      </div>
+    </div>
+  <% end %>
+
+  <% unless @post.aim.empty? %>
+    <div class="content">
+      <h1>意図</h1>
+      <div class="main">
+        <%= @post.aim %>
+      </div>
+    </div>
+  <% end %>
+
+  <% unless @post.do.empty? %>
+    <div class="content">
+      <h1>行動</h1>
+      <div class="main">
+        <%= @post.do %>
+      </div>
+    </div>
+  <% end %>
+
+  <% unless @post.notice.empty? %>
+    <div class="content">
+      <h1>変化/感じたこと</h1>
+      <div class="main">
+        <%= @post.notice %>
+      </div>
+    </div>
   <% end %>
 </div>
-
-<% unless @post.background.empty? %>
-  <div class="content">
-    <h1>背景</h1>
-    <%= @post.background %>
-  </div>
-<% end %>
-
-<% unless @post.aim.empty? %>
-  <div class="content">
-    <h1>意図</h1>
-    <%= @post.aim %>
-  </div>
-<% end %>
-
-<% unless @post.do.empty? %>
-  <div class="content">
-    <h1>行動</h1>
-    <%= @post.do %>
-  </div>
-<% end %>
-
-<% unless @post.notice.empty? %>
-  <div class="content">
-    <h1>変化/感じたこと</h1>
-    <%= @post.notice %>
-  </div>
-<% end %>
