@@ -50,3 +50,46 @@
         <% end %>
     </div>
 </div>    
+    <%= form_tag("/posts/#{@post.id}/update") do %>
+
+        <p>タイトル</p>
+        <input name="tytle" value="<%= @post.tytle %>" class="<%= "error-input" if @post.errors.include?(:tytle) %>">
+        <% if @post.errors.include?(:tytle) %>
+            <p class="error-message">入力必須項目です</p>
+        <% end %>
+
+
+        <p>日付</p>
+        <div>
+            <div>
+                <input name="year" value="<%= @post.year %>" class="<%= "error-input" if @post.errors.include?(:year) %>">
+                <p>年</p>
+            </div>
+            <% if @post.errors.include?(:year) %>
+                <p class="error-message">入力必須項目です</p>
+            <% end %>
+
+            <div>
+                <input name="month" value="<%= @post.month %>" class="<%= "error-input" if @post.errors.include?(:month) %>">
+                <p>月</p>
+            </div>
+            <% if @post.errors.include?(:month) %>
+                <p class="error-message">入力必須項目です</p>
+            <% end %>
+        </div>
+        
+        <p>背景</p>
+        <textarea name="background"><%= @post.background %></textarea>
+
+        <p>意図</p>
+        <textarea name="aim"><%= @post.aim %></textarea>
+
+        <p>行動</p>
+        <textarea name="do"><%= @post.do %></textarea>
+
+        <p>気付き・変化</p>
+        <textarea name="notice"><%= @post.notice %></textarea>
+        
+        <input type="submit" value="Update">
+    <% end %>
+</div>

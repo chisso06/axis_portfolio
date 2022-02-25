@@ -12,7 +12,7 @@
 
   <body>
     <div>
-      <% if @current_user %>
+      <% unless session[:id].nil? %>
         <header>
           <div class="header-mini">
             <a href="/users/index"><h1>AXIS Portfolio</h1></a>
@@ -32,8 +32,18 @@
       <% end %>
     </div>
 
+    <% if flash[:dangerous] %>
+      <div class="flash dangerous">
+        <%= flash[:dangerous] %>
+      </div>
+    <% elsif flash[:notice] %>
+      <div class="flash notice">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    
+
     <%= yield %>
-  
     <% unless session[:id].nil? %>
       <footer>
         <div class="footer-mini">

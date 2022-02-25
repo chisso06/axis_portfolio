@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :non_login_user, only: [:logout, :show, :index, :setting, :setting_update]
-  before_action :login_user, only: [:new, :create, :login_form, :login]
+  before_action :login_user, only: [:login_form, :login]
+  
   def new
     @user = User.new
   end
@@ -19,6 +20,7 @@ class UsersController < ApplicationController
       flash[:notice] = '新規登録に成功しました'
       redirect_to('/users/index')
     else
+      flash[:dangerous] = '入力された内容に誤りがあります'
       render('users/new')
     end
   end
@@ -36,7 +38,7 @@ class UsersController < ApplicationController
       flash[:notice] = 'ログインに成功しました'
       redirect_to('/users/index')
     else
-      flash[:notice] = 'emailまたはpasswordが違います'
+      flash[:dangerous] = 'emailまたはpasswordが違います'
       render('users/login_form')
     end
   end
@@ -71,23 +73,24 @@ class UsersController < ApplicationController
         flash[:notice] = '設定を更新しました'
         redirect_to('/users/setting')
       else
+        flash[:dangerous] = '入力された内容に誤りがあります'
         render('users/setting')
       end
     else
-      flash[:notice] = "正しいパスワードを入力してください"
+      flash[:dangerous] = "正しいパスワードを入力してください"
       render('users/setting')
     end
   end
 end
 
 def login_user
-  if @current_user
+  unless session[:id].nil?
     redirect_to('/users/index')
   end
 end
 
 def non_login_user
-  if @current_user == nil
+  if session[:id].nil?
     flash[:notice] = 'ログインしてください'
     redirect_to('/')
   end

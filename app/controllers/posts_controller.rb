@@ -22,6 +22,7 @@ class PostsController < ApplicationController
       flash[:notice] = '投稿が保存されました'
       redirect_to("/users/#{session[:id]}")
     else
+      flash[:dangerous] = '入力された内容に誤りがあります'
       render('posts/new')
     end
   end
@@ -35,20 +36,21 @@ class PostsController < ApplicationController
   end
 
   def update
-    post = Post.find_by(id: params[:id])
-    post.year = params[:year]
-    post.month = params[:month]
-    post.tytle = params[:tytle]
-    post.background = params[:background]
-    post.aim = params[:aim]
-    post.do = params[:do]
-    post.notice = params[:notice]
+    @post = Post.find_by(id: params[:id])
+    @post.year = params[:year]
+    @post.month = params[:month]
+    @post.tytle = params[:tytle]
+    @post.background = params[:background]
+    @post.aim = params[:aim]
+    @post.do = params[:do]
+    @post.notice = params[:notice]
 
-    if post.save
+    if @post.save
       flash[:notice] = '編集が保存されました'
-      redirect_to("/posts/#{post.id}/edit")
+      redirect_to("/users/#{session[:id]}")
     else
-      render("posts/#{post.id}/edit")
+      flash[:dangerous] = '入力された内容に誤りがあります'
+      render('posts/edit')
     end
   end
 
@@ -62,15 +64,15 @@ class PostsController < ApplicationController
   # before_actions
 
   def non_login_user
-    if @current_user = nil
+    if session[:id].nil?
       flash[:notice] = 'ログインしてください'
       redirect_to('/')
     end
   end
 
   def correct_user
-    unless session[:id] = params[:id]
-      flash[:notice] = '権限がありません'
+    unless session[:id] == Post.find_by(id: params[:id]).user_id
+      flash[:dangerous] = '権限がありません'
       redirect_to('/users/index')
     end
   end

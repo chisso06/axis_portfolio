@@ -51,3 +51,30 @@
     </div>  
   </div>
 </div>
+<% unless @post.background.empty? %>
+  <div class="content">
+    <h1>背景</h1>
+    <%= @post.background %>
+  </div>
+<% end %>
+
+<% unless @post.aim.empty? %>
+  <div class="content">
+    <h1>意図</h1>
+    <%= @post.aim %>
+  </div>
+<% end %>
+
+<% unless @post.do.empty? %>
+  <div class="content">
+    <h1>行動</h1>
+    <%= @post.do %>
+  </div>
+<% end %>
+
+<% unless @post.notice.empty? %>
+  <div class="content">
+    <h1>変化/感じたこと</h1>
+    <%= @post.notice %>
+  </div>
+<% end %>
