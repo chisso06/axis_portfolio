@@ -544,28 +544,6 @@ body {
   }
 }
 
-.error-message {
-  color: #a00;
-  font-size: 12px;
-  margin-top: 5px;
-}
-
-.flash {
-  width: 100%;
-  height: 30px;
-  color: white;
-  text-align: center;
-  line-height: 30px;
-}
-
-.notice {
-  background-color: #00ACC1;
-}
-
-.dangerous {
-  background-color: #a00;
-}
-
 /* ============================================ */
 /* TOP */
 /* ============================================ */
@@ -695,3 +673,32 @@ body {
 /* Posts new */
 /* ============================================ */
 
+
+
+/* ===== Flash Notices ===== */
+.notice {
+  background-color: #00ACC1;
+}
+
+.dangerous {
+  background-color: #a00;
+}
+
+/* ===== Error Messages ===== */
+.error-message {
+  color: #a00;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.error-input {
+  border: solid 2px #a00;
+}
+
+.flash {
+  width: 100%;
+  height: 30px;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+}

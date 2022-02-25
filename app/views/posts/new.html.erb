@@ -8,7 +8,7 @@
         <%= form_tag("/posts/create") do %>
 
             <p>タイトル</p>
-            <input name="tytle" value="<%= @post.tytle %>">
+            <input name="tytle" value="<%= @post.tytle %>" class="<%= "error-input" if @post.errors.include?(:tytle) %>">
             <% if @post.errors.include?(:tytle) %>
                 <p class="error-message">入力必須項目です</p>
             <% end %>
@@ -16,7 +16,7 @@
             <p>日付</p>
             <div>
                 <div>
-                    <input name="year" value="<%= @post.year %>">
+                    <input name="year" value="<%= @post.year %>" class="<%= "error-input" if @post.errors.include?(:year) %>">
                     <p>年</p>
                 </div>
                 <% if @post.errors.include?(:year) %>
@@ -24,7 +24,7 @@
                 <% end %>
 
                 <div>
-                    <input name="month" value="<%= @post.month %>">
+                    <input name="month" value="<%= @post.month %>" class="<%= "error-input" if @post.errors.include?(:month) %>">
                     <p>月</p>
                 </div>
                 <% if @post.errors.include?(:month) %>

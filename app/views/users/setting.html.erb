@@ -8,7 +8,7 @@
         <%= form_tag("/users/setting") do %>
             <div class="input into">  
                 <p>ニックネーム</p>
-                <input name="name" value="<%= @user.name %>">
+                <input name="name" value="<%= @user.name %>" class="<%= "error-input" if @user.errors.include?(:name) %>">
             </div>
             <% if @user.errors.include?(:name) %>
                 <p class="error-message">入力必須項目です</p>
@@ -16,23 +16,23 @@
 
             <div class="input into">  
                 <p>姓名</p>
-                <input name="real_name" value="<%= @user.real_name %>">
+                <input name="real_name" value="<%= @user.real_name %>" class="<%= "error-input" if @user.errors.include?(:real_name) %>">
             </div>
             <% if @user.errors.include?(:real_name) %>
                 <p class="error-message">入力必須項目です</p>
             <% end %>
 
             <div class="input into">  
-                <p>期(0-10)</p>
-                <input name="grade" value="<%= @user.grade %>">
+                <p>email</p>
+                <input name="email" value="<%= @user.email %>" class="<%= "error-input" if @user.errors.include?(:email) %>">
             </div>
             <% if @user.errors.include?(:email) %>
-                <p class="error-message">有効なメールアドレスを入力してください</p>
+                <p class="error-message">有効な未登録のメールアドレスを入力してください</p>
             <% end %>
 
             <div class="input into">  
-                <p>email</p>
-                <input name="email" value="<%= @user.email %>">
+                <p>期(0-10)</p>
+                <input name="grade" value="<%= @user.grade %>" class="<%= "error-input" if @user.errors.include?(:grade) %>">
             </div>
             <% if @user.errors.include?(:grade) %>
                 <p class="error-message">0〜10の半角数字を入力してください</p>
@@ -40,10 +40,10 @@
 
             <div class="input into">  
                 <p>password</p>
-                <input name="password">
+                <input name="password" class="<%= "error-input" if @user.errors.include?(:password) %>">
             </div>
             <% if @user.errors.include?(:password) %>
-                <p class="error-message">6文字以上のパスワードを入力してください</p>
+                <p class="error-message">パスワードを入力してください</p>
             <% end %>
 
             <input type="submit" value="Update" class="button stud">
