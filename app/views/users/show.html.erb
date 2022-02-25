@@ -4,7 +4,7 @@
     <h1><%= @user.name %></h1>
     <p><%= @user.real_name %></p>
 
-    <% if @user.grade = 0 %>
+    <% if @user.grade == 0 %>
       <p>運営</p>
     <% else %>
       <p><%= @user.grade %>期生</p>

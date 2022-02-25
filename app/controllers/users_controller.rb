@@ -33,7 +33,7 @@ class UsersController < ApplicationController
       email: params[:email],
     )
 
-    if @user && @user.authenticate(params[:password])
+    if @user && @user == @user.authenticate(params[:password])
       session[:id] = @user.id
       flash[:notice] = 'ログインに成功しました'
       redirect_to('/users/index')
@@ -62,21 +62,23 @@ class UsersController < ApplicationController
   end
 
   def setting_update
-    @user = User.find_by(id: session[:id])
-    @user.name = params[:name]
-    @user.real_name = params[:real_name]
-    @user.grade = params[:grade]
-    @user.email = params[:email]
+    user = User.find_by(id: session[:id])
+    user.name = params[:name]
+    user.real_name = params[:real_name]
+    user.grade = params[:grade]
+    user.email = params[:email]
 
-    if @user.authenticate(params[:password])
-      if @user.save
+    if user == user.authenticate(params[:password])
+      if user.save
         flash[:notice] = '設定を更新しました'
         redirect_to('/users/setting')
       else
+        @user = User.find_by(id: session[:id])
         flash[:dangerous] = '入力された内容に誤りがあります'
         render('users/setting')
       end
     else
+      @user = User.find_by(id: session[:id])
       flash[:dangerous] = "正しいパスワードを入力してください"
       render('users/setting')
     end
