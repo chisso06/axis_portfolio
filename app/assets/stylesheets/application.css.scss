@@ -512,7 +512,7 @@ body {
 }
 
 .innercontent {
-  width: 90%;
+  width: 70%;
   margin: 50px auto;
   padding-top: 10px;
 }
@@ -689,7 +689,7 @@ body {
         line-height: 60px;
         border-bottom: 1px solid #b8b8b8;
         &:hover {
-          color: #444444
+          color: #444444;
         }
       }
       .edit-button {
@@ -697,6 +697,20 @@ body {
           margin-right: 10px;
         }
       }      
+    }
+  }
+}
+
+/* ===== users index ===== */
+.index-whole {
+  .innercontent {
+    a {
+      font-size: 20px;
+      margin: 0 40px;
+      line-height: 50px;
+      &:hover {
+        color: #a00;
+      }
     }
   }
 }

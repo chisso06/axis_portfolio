@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  # before_action :non_login_user
-  # before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :non_login_user
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def new
     @post = Post.new

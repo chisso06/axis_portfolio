@@ -9,12 +9,11 @@
     <% else %>
       <p><%= @user.grade %>期生</p>
     <% end %>
-
-    <div class="show-button">
-      <% if @user.id == session[:id] %>
-        <a href="/posts/new">ポートフォリオを作成する</a>
-      <% end %>
-    </div>  
+    <% if @user.id == session[:id] %>
+      <div class="show-button">
+          <a href="/posts/new">ポートフォリオを作成する</a>
+      </div>
+    <% end %>
   </div>
 
   <% @user.posts.order(id: :DESC).each do |post| %>
@@ -22,16 +21,16 @@
       <%= link_to("/posts/#{post.id}/show", class: "topic-date") do %>
         <%= post.year %>/<%= post.month %>　<%= post.tytle %>
       <% end %>
-      <div class="edit-link">
-          <% if params[:id] = session[:id] %>
-            <div class="edit-button">
-              <%= link_to("編集", "/posts/#{post.id}/edit", class: "gray-button") %>
-            </div>
-            <div class="destroy-button">
-              <%= link_to("削除", "/posts/#{post.id}/destroy", method:"post", class:"gray-button") %>
-            </div>
-          <% end %>
-      </div>
+      <% if params[:id] == session[:id] %>
+        <div class="edit-link">
+          <div class="edit-button">
+            <%= link_to("編集", "/posts/#{post.id}/edit", class: "gray-button") %>
+          </div>
+          <div class="destroy-button">
+            <%= link_to("削除", "/posts/#{post.id}/destroy", method:"post", class:"gray-button") %>
+          </div>
+        </div>
+      <% end %>
     </div>
   <% end %>
 </div>
