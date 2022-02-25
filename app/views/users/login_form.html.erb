@@ -1,7 +1,5 @@
 <div class="background-photo">
-
-    <%= form_tag("/login") do %>
-        <div class="whole log-whole">
+        <%= form_tag("/login", class: 'whole log-whole') do %>
             <div class="block">
                 <h2>LOG IN</h2>
                 <div class="input">
@@ -14,7 +12,5 @@
                 </div>
             </div>
             <input type="submit" value="Start" class="button start">
-        </div>
-    <% end %>
-    
+        <% end %>
 </div>    
