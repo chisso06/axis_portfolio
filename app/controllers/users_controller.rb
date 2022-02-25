@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       flash[:notice] = '新規登録に成功しました'
       redirect_to('/users/index')
     else
-      flash[:dangerous] = '入力された内容に誤りがあります。'
+      flash[:dangerous] = '入力された内容に誤りがあります'
       render('users/new')
     end
   end

@@ -10,22 +10,42 @@
                 <p>ニックネーム</p>
                 <input name="name" value="<%= @user.name %>">
             </div>
+            <% if @post.errors.include?(:name) %>
+                <p class="error-message">入力必須項目です</p>
+            <% end %>
+
             <div class="input into">  
                 <p>姓名</p>
                 <input name="real_name" value="<%= @user.real_name %>">
             </div>
+            <% if @post.errors.include?(:real_name) %>
+                <p class="error-message">入力必須項目です</p>
+            <% end %>
+
             <div class="input into">  
                 <p>期(0-10)</p>
                 <input name="grade" value="<%= @user.grade %>">
             </div>
+            <% if @post.errors.include?(:email) %>
+                <p class="error-message">有効なメールアドレスを入力してください</p>
+            <% end %>
+
             <div class="input into">  
                 <p>email</p>
                 <input name="email" value="<%= @user.email %>">
             </div>
+            <% if @post.errors.include?(:grade) %>
+                <p class="error-message">0〜10の半角数字を入力してください</p>
+            <% end %>
+
             <div class="input into">  
                 <p>password</p>
                 <input name="password">
             </div>
+            <% if @post.errors.include?(:password) %>
+                <p class="error-message">6文字以上のパスワードを入力してください</p>
+            <% end %>
+
             <div class="button stud">
                 <input type="submit" value="Update">
             </div>

@@ -27,7 +27,7 @@
                     <input name="month" value="<%= @post.month %>">
                     <p>月</p>
                 </div>
-                <% if @post.errors.include?(:year) %>
+                <% if @post.errors.include?(:month) %>
                     <p class="error-message">入力必須項目です</p>
                 <% end %>
 

@@ -24,7 +24,7 @@
                     <p>email</p>
                     <input name="email" value="<%= @user.email %>">
                 </div>
-                <% if @post.errors.include?(:) %>
+                <% if @post.errors.include?(:email) %>
                     <p class="error-message">有効なメールアドレスを入力してください</p>
                 <% end %>
 
