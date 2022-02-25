@@ -33,14 +33,21 @@
     </div>
 
     <%= yield %>
-
-    <% if session[:user_id] %>
+  
+    <% unless session[:id].nil? %>
       <footer>
-        <p>©︎</p>
-        <p>2022 関西AXIS</p>
-        <a href="/help">Help</a>
+        <div class="footer-mini">
+          <div class="two-footer">
+            <a href="/Help">ヘルプページ</a>
+            <p>©︎</p>
+            <p>2022 関西AXIS</p>
+          </div>
+        </div>
       </footer>
     <% end %>
+
+
+       
   </body>
 
 </html>

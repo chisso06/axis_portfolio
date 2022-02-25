@@ -489,8 +489,27 @@ header h1{
 footer {
   width: 100%;
   height: 50px;
+  .footer-mini {
+    width: 85%;
+    height: 50px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    .two-footer{
+      display: flex;
+      margin: 0 auto;
+      p {
+        font-size: 12px;
+        line-height: 50px;
+      }
+      a {
+        font-size: 12px;
+        margin-right: 50px;
+        line-height: 50px;
+      }
+    }
+  }
 }
-
 
 
 
