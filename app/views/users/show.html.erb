@@ -1,4 +1,4 @@
-<div class="background-color wide">
+<div class="background-color show-whole">
   <div class="top show-top">
 
     <h1><%= @user.name %></h1>
@@ -17,7 +17,7 @@
     </div>  
   </div>
 
-  <% @user.posts.each do |post| %>
+  <% @user.posts.order(id: :DESC).each do |post| %>
     <div>
       <%= link_to("/posts/#{post.id}/show") do %>
         <%= post.year %>/<%= post.month %>　<%= post.tytle %>
