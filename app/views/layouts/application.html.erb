@@ -14,7 +14,7 @@
     <% unless session[:id].nil? %>
       <header>
         <div class="header-mini">
-          <a href="/users/index"><h1>AXIS PORTFOLIO</h1></a>
+          <a href="/users/index"><h1>AXIS Portfolio</h1></a>
           <div class="three-link">
             <div class="redhover">
               <%= link_to("MyPage", "/users/#{session[:id]}") %>
@@ -31,31 +31,26 @@
     <% end %>
 
     <% if flash[:dangerous] %>
-      <div class="flash dangerous">
+      <div class="flash flash-dangerous">
         <%= flash[:dangerous] %>
       </div>
     <% elsif flash[:notice] %>
-      <div class="flash notice">
+      <div class="flash flash-notice">
         <%= flash[:notice] %>
       </div>
     <% end %>
-    
 
     <%= yield %>
-    <% unless session[:id].nil? %>
-      <footer>
-        <div class="footer-mini">
-          <div class="two-footer">
-            <a href="/help">ヘルプページ</a>
-            <p>©︎</p>
-            <p>2022 関西AXIS</p>
-          </div>
+
+    <footer>
+      <div class="footer-mini">
+        <div class="two-footer">
+          <a href="/help">ヘルプページ</a>
+          <a href="https://forms.gle/RUG21EDnvNbof9kC6">お問い合わせ</a>
+          <p>©︎</p>
+          <p>2022 関西AXIS</p>
         </div>
-      </footer>
-    <% end %>
-
-
-       
+      </div>
+    </footer>
   </body>
-
 </html>

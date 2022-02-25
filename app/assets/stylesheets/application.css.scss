@@ -511,6 +511,12 @@ body {
   }
 }
 
+.innercontent {
+  width: 90%;
+  margin: 50px auto;
+  padding-top: 10px;
+}
+
 .input {
   p{
     font-size: 20px;
@@ -575,6 +581,19 @@ body {
   }
 }
 
+/* ===== Help ===== */
+.help-whole {
+  .innercontent {
+    h2 {
+      font-size: 25px;
+      font-weight: bold;
+    }
+    p {
+      margin-top: 10px;
+    }
+  }
+}
+
 /* ===== LOG IN ===== */
 
 .log-whole{
@@ -619,16 +638,6 @@ body {
     }
   }
 }
-
-/* ===== Users index ===== */
-.index-whole {
-  .innercontent {
-    width: 90%;
-    margin: 50px 0px;
-    padding-top: 10px;
-  }
-}
-
 
 /* ===== Users show ===== */
 
@@ -848,10 +857,10 @@ footer {
   text-align: center;
   line-height: 30px;
 }
-.notice {
+.flash-notice {
   background-color: #00ACC1;
 }
-.dangerous {
+.flash-dangerous {
   background-color: #a00;
 }
 

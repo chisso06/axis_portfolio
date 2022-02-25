@@ -3,7 +3,7 @@
 
         <%= form_tag("/users/create", class: "form") do %>
             <div class="block max">
-                <h2>SIGN UP</h2>
+                <h2>新規登録</h2>
                 <div class="input">
                     <p>ニックネーム</p>
                     <input name="name" value="<%= @user.name %>" class="<%= "error-input" if @user.errors.include?(:name) %>">
