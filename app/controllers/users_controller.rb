@@ -85,6 +85,11 @@ class UsersController < ApplicationController
   end
 end
 
+def destroy
+  User.find_by(id: params[:id]).destroy
+  redirect_to('/users/index')
+end
+
 def login_user
   unless session[:id].nil?
     redirect_to('/users/index')

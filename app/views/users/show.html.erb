@@ -19,7 +19,7 @@
   <% @user.posts.order(id: :DESC).each do |post| %>
     <div class="content-box">
       <%= link_to("/posts/#{post.id}/show", class: "topic-date") do %>
-        <%= post.year %>/<%= post.month %>　<%= post.tytle %>
+        <%= post.year %>年<%= post.month %>月　<%= post.tytle %>
       <% end %>
       <% if params[:id] == session[:id] %>
         <div class="edit-link">
