@@ -14,7 +14,7 @@
     <% end %>
   </div>
 
-  <% @user.posts.order(id: :DESC).each do |post| %>
+  <% @user.posts.order(year: :desc, month: :desc).each do |post| %>
     <div class="content-box">
       <%= link_to("/posts/#{post.id}/show", class: "topic-date") do %>
         <%= post.year %>年<%= post.month %>月　<%= post.tytle %>
