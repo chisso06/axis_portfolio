@@ -15,22 +15,18 @@
 
             <div class="input">
                 <p>日付</p>
-                <div class="postnew-input">
+                <div class="postnew-input  <%= "error-input" if @post.errors.include?(:year) %>">
                     <div class="nextto-input">
-                        <input name="year" value="<%= @post.year %>" class="mini-input <%= "error-input" if @post.errors.include?(:year) %>">
+                        <input name="year" value="<%= @post.year %>" class="mini-input">
                         <p>年</p>
                     </div>
                     <div class="nextto-input">
-                        <input name="month" value="<%= @post.month %>" class="mini-input <%= "error-input" if @post.errors.include?(:month) %>">
+                        <input name="month" value="<%= @post.month %>" class="mini-input">
                         <p>月</p>
                     </div>
                 </div>
             </div>
-            <% if @post.errors.include?(:year) %>
-                <p class="error-message">入力必須項目です</p>
-            <% end %>
-
-            <% if @post.errors.include?(:month) %>
+            <% if @post.errors.include?(:year) || @post.errors.include?(:month) %>
                 <p class="error-message">入力必須項目です</p>
             <% end %>
 
@@ -54,9 +50,7 @@
                 <textarea name="notice" name="notice" rows="7" cols="85" style="text-align:left;"><%= @post.notice %></textarea>
             </div>
 
-            <div class="button big-button">
-                <input type="submit" value="更新">
-            </div>
+            <input type="submit" value="更新" class="button big-button">
         <% end %>
     </div>
 </div>
