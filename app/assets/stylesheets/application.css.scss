@@ -485,13 +485,12 @@ body {
   padding: 180px 0px 50px 0px;
   width: 100%;
   margin: 0 auto;
+  text-align: center;
   h1 {
     font-weight: bold;
     font-size: 48px;
-    text-align: center;
   }
   p {
-    text-align: center;
     margin-top: 20px;
   }
 }
@@ -544,6 +543,21 @@ body {
   &:hover {
     background-color: #a00;
     cursor: pointer;
+  }
+}
+
+.button2 {
+  display: inline-block;
+  padding: 10px 10px;
+  border: 1px solid black;
+  border-radius: 4px;
+  text-align: center;
+  margin-top: 20px;
+  &:hover {
+    background-color: #a00;
+    cursor: pointer;
+    color: white;
+    border: 1px solid #a00;
   }
 }
 
@@ -647,20 +661,8 @@ body {
     p {
       font-size: 24px;
     }
-    .show-button {
-      border: 1px solid black;
-      border-radius: 4px;
+    .button2 {
       width: 288px;
-      margin: 0 auto;
-      text-align: center;
-      padding: 10px 10px;
-      margin-top: 20px !important;
-      &:hover{
-        background-color: #a00;
-        cursor: pointer;
-        color: white;
-        border: 1px solid #a00;
-      }
     }  
   }
   .content-box {
@@ -777,18 +779,8 @@ body {
       margin-top: 20px;
       display: flex;
     }
-    .switch {
+    .button2 {
       width: 144px;
-      padding: 10px 10px;
-      border: 1px solid black;
-      border-radius: 4px;
-      text-align: center;
-      &:hover {
-        background-color: #a00;
-        cursor: pointer;
-        color: white;
-        border: 1px solid #a00;
-      }
     }
     .switch-left {
       margin-right: 20px;
