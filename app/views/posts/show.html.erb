@@ -8,19 +8,23 @@
         <p> | <%= @post.year %>/<%= @post.month %></p>
       </div>
     </div>
-    <% if @post.user_id == session[:id] %>
-      <div class="two-button">
-            <%= link_to("編集", "/posts/#{@post.id}/edit", class: "button2 switch-left") %>
-            <%= link_to("削除", "/posts/#{@post.id}/destroy", method: "post", class: "button2") %>
-      </div>
-    <% end %>
+    <div class="two-button">
+      <% if @post.user_id = session[:id] %>
+        <div class="switch switch-left">
+          <%= link_to("編集", "/posts/#{@post.id}/edit") %>
+        </div>
+        <div class="switch">
+          <%= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"}) %>
+        </div>
+      <% end %>
+    </div>
   </div>
 
   <% unless @post.background.empty? %>
     <div class="content">
       <h1>背景</h1>
       <div class="main">
-        <p><%= @post.background %></p>
+        <%= @post.background %>
       </div>
     </div>
   <% end %>
@@ -29,7 +33,7 @@
     <div class="content">
       <h1>意図</h1>
       <div class="main">
-      <p><%= @post.aim %></p>
+        <%= @post.aim %>
       </div>
     </div>
   <% end %>
@@ -38,7 +42,7 @@
     <div class="content">
       <h1>行動</h1>
       <div class="main">
-      <p><%= @post.do %></p>
+        <%= @post.do %>
       </div>
     </div>
   <% end %>
@@ -47,7 +51,7 @@
     <div class="content">
       <h1>変化/感じたこと</h1>
       <div class="main">
-      <p><%= @post.notice %></p>
+        <%= @post.notice %>
       </div>
     </div>
   <% end %>
