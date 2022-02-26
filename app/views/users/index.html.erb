@@ -7,7 +7,9 @@
     <h1>運営</h1>
     <div class="innercontent">
       <% @users.where(grade: 0).each do |user| %>
+        <div class="username">
           <%= link_to(user.name, "/users/#{user.id}") %>
+        </div>
       <% end %>
     </div>
   </div>

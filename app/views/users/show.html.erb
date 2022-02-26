@@ -10,9 +10,7 @@
       <p><%= @user.grade %>期生</p>
     <% end %>
     <% if @user.id == session[:id] %>
-      <div class="show-button">
-          <a href="/posts/new">ポートフォリオを作成する</a>
-      </div>
+      <a href="/posts/new" class="button2">ポートフォリオを作成する</a>
     <% end %>
   </div>
 
