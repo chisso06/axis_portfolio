@@ -86,7 +86,8 @@ class UsersController < ApplicationController
 end
 
 def destroy
-  User.find_by(id: params[:id]).destroy
+  user = User.find_by(id: params[:id])
+  user.destroy
   redirect_to('/users/index')
 end
 

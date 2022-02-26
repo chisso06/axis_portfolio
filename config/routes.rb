@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/users/setting' => 'users#setting'
   post '/users/setting' => 'users#setting_update'
   get '/users/index' => 'users#index'
-  get '/users/:id/destroy' => 'users#destroy'
+  # post '/users/:id/destroy' => 'users#destroy'
   get '/users/:id' => 'users#show'
 
   get '/login' => 'users#login_form'
