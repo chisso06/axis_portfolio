@@ -797,6 +797,12 @@ body {
   .main {
     padding: 50px 100px;
     width: 100%;
+    text-align: left;
+    p {
+      overflow-wrap: break-word;
+      white-space: pre-wrap;
+      line-height: 35px;
+    }
   }
 }
 

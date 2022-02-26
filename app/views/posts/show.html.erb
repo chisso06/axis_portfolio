@@ -5,7 +5,7 @@
     <div class="nameyear">
       <div class="nameyear-box">
         <%= link_to(@post.user.name, "/users/#{@post.user_id}") %>
-        <p> | <%= @post.year %>/<%= @post.month %></p>
+        <p> | <%= @post.year %>年<%= @post.month %>月</p>
       </div>
     </div>
     <div class="two-button">
@@ -24,7 +24,7 @@
     <div class="content">
       <h1>背景</h1>
       <div class="main">
-        <%= @post.background %>
+        <p><%= @post.background %></p>
       </div>
     </div>
   <% end %>
