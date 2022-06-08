@@ -1,0 +1,6 @@
+<%= form_with(model: @user) do |f| %>
+  <%= f.label : %>
+  <%= f.file_field , class: 'form_control' %>
+  <%= file_field_tag :image %>
+  <%= f.submit "", class: "btn btn-primary" %>
+<% end %>
