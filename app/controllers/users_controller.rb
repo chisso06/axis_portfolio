@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :non_login_user, only: [:logout, :show, :index, :setting, :setting_update]
-  before_action :login_user, only: [:login_form, :login]
-  
+  before_action :non_login_user, only: %i[logout show index setting setting_update]
+  before_action :login_user, only: %i[login_form login]
+
   def new
     @user = User.new
   end
@@ -12,7 +12,8 @@ class UsersController < ApplicationController
       real_name: params[:real_name],
       email: params[:email],
       grade: params[:grade],
-      password: params[:password]
+      password: params[:password],
+      image_name: 'defauls_user.jpg'
     )
 
     if @user.save
@@ -25,12 +26,11 @@ class UsersController < ApplicationController
     end
   end
 
-  def login_form
-  end
+  def login_form; end
 
   def login
     @user = User.find_by(
-      email: params[:email],
+      email: params[:email]
     )
 
     if @user && @user == @user.authenticate(params[:password])
@@ -79,27 +79,31 @@ class UsersController < ApplicationController
       end
     else
       @user = User.find_by(id: session[:id])
-      flash[:dangerous] = "正しいパスワードを入力してください"
+      flash[:dangerous] = '正しいパスワードを入力してください'
       render('users/setting')
     end
+
+    if params[:image]
+      @user.image_name = "#{@user.id}.jpg"
+      image = params[:image]
+      File.binwrite("public/user_images/#{@user.image_name}", image.read)
+    end
   end
-end
 
-def destroy
-  user = User.find_by(id: params[:id])
-  user.destroy
-  redirect_to('/users/index')
-end
-
-def login_user
-  unless session[:id].nil?
+  def destroy
+    user = User.find_by(id: params[:id])
+    user.destroy
     redirect_to('/users/index')
   end
-end
 
-def non_login_user
-  if session[:id].nil?
-    flash[:notice] = 'ログインしてください'
-    redirect_to('/')
+  def login_user
+    redirect_to('/users/index') unless session[:id].nil?
+  end
+
+  def non_login_user
+    if session[:id].nil?
+      flash[:notice] = 'ログインしてください'
+      redirect_to('/')
+    end
   end
 end
